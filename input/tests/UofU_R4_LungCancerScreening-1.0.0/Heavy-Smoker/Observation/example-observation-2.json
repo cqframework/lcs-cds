@@ -19,7 +19,8 @@
     "reference": "Patient/example-patient-2"
   },
   "effectivePeriod": {
-    "start": "1977-08-18"
+    "start": "1977-08-18",
+    "end": "2020-03-06"
   },
   "valueCodeableConcept": {
     "coding": [

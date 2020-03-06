@@ -23,6 +23,7 @@ context Patient
 define "Inclusion Criteria":
   "55 through 80"
   and ("Is current smoker" or "Is former smoker who quit within past 15 years")
+  and "Has 30 pack-year smoking history"
   and not "Has lung cancer"
   and not "Had chest CT in past year"
 
@@ -52,38 +53,82 @@ define "Exclusion Criteria":
   )
 
 define "55 through 80":
-AgeInYears() >= 55 and AgeInYears() <= 80
-
-// Retrieve not currently working in atom environment.
-/* define "Is current smoker":
-  exists ([Observation: "Tobacco Smoking Status"] O
-  where O.value in "Current Smoker") */
+  AgeInYears() >= 55 and AgeInYears() <= 80
 
 define "Is current smoker":
-exists (
-  [Observation] O
-    where FHIRHelpers.ToCode(singleton from O.code.coding) ~ "Tobacco Smoking Status"
-    and FHIRHelpers.ToConcept(O.value as CodeableConcept) in "Current Smoker"
-)
+  exists (
+    [Observation] O
+      where FHIRHelpers.ToCode(singleton from O.code.coding) ~ "Tobacco Smoking Status"
+      and FHIRHelpers.ToConcept(O.value as CodeableConcept) in "Current Smoker"
+  )
 
 define "Is former smoker who quit within past 15 years":
-exists (  [Observation] O
-    where FHIRHelpers.ToCode(singleton from O.code.coding) ~ "Tobacco Smoking Status"
-    and singleton from FHIRHelpers.ToConcept(O.value as CodeableConcept).codes ~ "Former Smoker"
-    and duration in years between O.effective.end and Now() < 15
+  exists (
+    [Observation] O
+      where FHIRHelpers.ToCode(singleton from O.code.coding) ~ "Tobacco Smoking Status"
+      and singleton from FHIRHelpers.ToConcept(O.value as CodeableConcept).codes ~ "Former Smoker"
+      and duration in years between O.effective.end and Now() < 15
   )
+
+define "Packs per day":
+  if "Is current smoker" or "Is former smoker who quit within past 15 years"
+    then [Observation] O
+      return FHIRHelpers.ToQuantity(singleton from (O.component C where FHIRHelpers.ToConcept(C.code) ~ "PACKS A DAY").value).value
+  else null
+
+define "Duration years":
+  if "Is current smoker" or "Is former smoker who quit within past 15 years"
+    then [Observation] O
+      return duration in years between O.effective.start and O.effective.end
+  else null
+
+define "Duration days":
+  if "Is current smoker" or "Is former smoker who quit within past 15 years"
+    then [Observation] O
+      return duration in days between O.effective.start and O.effective.end
+  else null
+
+define "Has 30 pack-year smoking history":
+exists (
+  if "Is current smoker" or "Is former smoker who quit within past 15 years"
+    then [Observation] O
+      where First("Duration days") * First("Packs per day") / First("Duration years") >= 30
+  else null
+)
 
 define "Has lung cancer":
   exists (
-  [Condition] C
-  where singleton from FHIRHelpers.ToConcept(C.clinicalStatus as CodeableConcept).codes in { ToConcept(Global."active"), ToConcept(Global."recurrence"), ToConcept(Global."relapse") }
-  and singleton from FHIRHelpers.ToConcept(C.code as CodeableConcept).codes in "Lung Cancer"
+    [Condition] C
+      where singleton from FHIRHelpers.ToConcept(C.clinicalStatus as CodeableConcept).codes in { ToConcept(Global."active"), ToConcept(Global."recurrence"), ToConcept(Global."relapse") }
+      and singleton from FHIRHelpers.ToConcept(C.code as CodeableConcept).codes in "Lung Cancer"
   )
 
 define "Had chest CT in past year":
-exists(
+  exists(
   [Procedure] P
-  where P.status = 'completed'
-  and singleton from FHIRHelpers.ToConcept(P.code as CodeableConcept).codes in "Chest CT"
-  and duration in years between P.performed and Now() < 1
-)
+    where P.status = 'completed'
+    and singleton from FHIRHelpers.ToConcept(P.code as CodeableConcept).codes in "Chest CT"
+    and duration in years between P.performed and Now() < 1
+  )
+
+define function "Normalize Interval"(choice Choice<FHIR.dateTime, FHIR.Period, FHIR.Timing, FHIR.instant, FHIR.string, FHIR.Age, FHIR.Range>):
+  case
+	  when choice is FHIR.dateTime then
+    	Interval[FHIRHelpers.ToDateTime(choice as FHIR.dateTime), FHIRHelpers.ToDateTime(choice as FHIR.dateTime)]
+		when choice is FHIR.Period then
+  		FHIRHelpers.ToInterval(choice as FHIR.Period)
+		when choice is FHIR.instant then
+			Interval[FHIRHelpers.ToDateTime(choice as FHIR.instant), FHIRHelpers.ToDateTime(choice as FHIR.instant)]
+		when choice is FHIR.Age then
+		  Interval[FHIRHelpers.ToDate(Patient.birthDate) + FHIRHelpers.ToQuantity(choice as FHIR.Age),
+			  FHIRHelpers.ToDate(Patient.birthDate) + FHIRHelpers.ToQuantity(choice as FHIR.Age) + 1 year)
+		when choice is FHIR.Range then
+		  Interval[FHIRHelpers.ToDate(Patient.birthDate) + FHIRHelpers.ToQuantity((choice as FHIR.Range).low),
+			  FHIRHelpers.ToDate(Patient.birthDate) + FHIRHelpers.ToQuantity((choice as FHIR.Range).high) + 1 year)
+		when choice is FHIR.Timing then
+		  Message(null as Interval<DateTime>, true, '1', 'Error', 'Cannot compute a single interval from a Timing type')
+    when choice is FHIR.string then
+      Message(null as Interval<DateTime>, true, '1', 'Error', 'Cannot compute an interval from a String value')
+		else
+			null as Interval<DateTime>
+	end

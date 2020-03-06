@@ -43,7 +43,7 @@
         ]
       },
       "valueQuantity": {
-        "value": 0,
+        "value": 1.2,
         "unit": "Packs/day"
       }
     }
