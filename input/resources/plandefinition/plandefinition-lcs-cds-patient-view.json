@@ -1,0 +1,86 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "lcs-cds-patient-view",
+  "version": "1.0.0",
+  "name": "PlanDefinition_Recommendation_Patient_View",
+  "title": "Final Recommendation Statement -- Lung Cancer Screening",
+  "type": {
+    "coding": [
+      {
+        "system": "http://hl7.org/fhir/plan-definition-type",
+        "code": "eca-rule",
+        "display": "ECA Rule"
+      }
+    ]
+  },
+  "status": "draft",
+  "publisher": "U.S. Preventive Services Task Force",
+  "description": "Adults aged 55 to 80 years (inclusive both ways, i.e., >=55, <= 80) who have a 30 pack-year smoking history and currently smoke or have quit within the past 15 years. Screening should be discontinued once a person has not smoked for 15 years (identical to inclusion criterion above) or develops a health problem that substantially limits life expectancy or the ability or willingness to have curative lung surgery (currently NOT taken into account.)",
+  "purpose": "Annual screening for lung cancer with low-dose computed tomography (LDCT)",
+  "usage": "TODO",
+  "library": [
+    {
+      "reference": "TODO"
+    }
+  ],
+  "action": [
+    {
+      "triggerDefinition": [
+        {
+          "type": "named-event",
+          "eventName": "patient-view"
+        }
+      ],
+      "condition": [
+        {
+          "kind": "applicability",
+          "language": "text/cql.name",
+          "expression": "Inclusion Criteria"
+        }
+      ],
+      "action": [
+        {
+          "title": "Meets eligibility criteria",
+          "description": "Identifies a patient who meets eligibility criteria",
+          "condition": [
+            {
+              "kind": "applicability",
+              "description": "Determine if the patient is eligibile",
+              "language": "text/cql.name",
+              "expression": "Inclusion Criteria"
+            }
+          ],
+          "dynamicValue": [
+            {
+              "path": "action.description",
+              "expression": "Is Eligible Detail"
+            },
+            {
+              "path": "action.title",
+              "expression": "Is Eligible Summary"
+            },
+            {
+              "path": "action.extension",
+              "expression": "Is Eligible Indicator"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "triggerDefinition": [
+        {
+          "type": "named-event",
+          "eventName": "patient-view"
+        }
+      ],
+      "condition": [
+        {
+          "kind": "applicability",
+          "language": "text/cql.name",
+          "expression": "Exclusion Criteria"
+        }
+      ]
+    }
+  ]
+}

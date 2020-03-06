@@ -4,7 +4,8 @@
   <url value="http://hl7.org/fhir/cqf/lcs-cds/ImplementationGuide/lcs-cds" />
   <version value="0.1.0" />
   <name value="LCS_CDS" />
-  <title value="IG Starting Point" />
+  <title value="Final Recommendation Statement
+Lung Cancer: Screening" />
   <status value="draft" />
   <experimental value="false" />
   <publisher value="CQF" />
