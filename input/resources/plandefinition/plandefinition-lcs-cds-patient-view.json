@@ -1,6 +1,10 @@
 {
   "resourceType": "PlanDefinition",
   "id": "lcs-cds-patient-view",
+  "meta": {
+    "versionId": "13",
+    "lastUpdated": "2020-03-06T16:44:04.134-07:00"
+  },
   "version": "1.0.0",
   "name": "PlanDefinition_Recommendation_Patient_View",
   "title": "Final Recommendation Statement -- Lung Cancer Screening",
@@ -17,25 +21,25 @@
   "publisher": "U.S. Preventive Services Task Force",
   "description": "Adults aged 55 to 80 years (inclusive both ways, i.e., >=55, <= 80) who have a 30 pack-year smoking history and currently smoke or have quit within the past 15 years. Screening should be discontinued once a person has not smoked for 15 years (identical to inclusion criterion above) or develops a health problem that substantially limits life expectancy or the ability or willingness to have curative lung surgery (currently NOT taken into account.)",
   "purpose": "Annual screening for lung cancer with low-dose computed tomography (LDCT)",
-  "usage": "TODO",
   "library": [
-    {
-      "reference": "TODO"
-    }
+    "http://hl7.org/fhir/cqf/lcs-cds/ImplementationGuide/lcs-cds/Library/UofU_R4_LungCancerScreening|1.0.0"
   ],
   "action": [
     {
-      "triggerDefinition": [
+      "trigger": [
         {
           "type": "named-event",
-          "eventName": "patient-view"
+          "name": "patient-view"
         }
       ],
       "condition": [
         {
           "kind": "applicability",
-          "language": "text/cql.name",
-          "expression": "Inclusion Criteria"
+          "expression": {
+            "description": "Determine if the patient is eligible for Lung Cancer Screening",
+            "language": "text/cql.name",
+            "expression": "Inclusion Criteria"
+          }
         }
       ],
       "action": [
@@ -45,40 +49,54 @@
           "condition": [
             {
               "kind": "applicability",
-              "description": "Determine if the patient is eligibile",
-              "language": "text/cql.name",
-              "expression": "Inclusion Criteria"
+              "expression": {
+                "description": "Determine if the patient is eligibile",
+                "language": "text/cql.name",
+                "expression": "Inclusion Criteria"
+              }
             }
           ],
           "dynamicValue": [
             {
               "path": "action.description",
-              "expression": "Is Eligible Detail"
+              "expression": {
+                "language": "text/cql.name",
+                "expression": "Is Eligible Detail"
+              }
             },
             {
               "path": "action.title",
-              "expression": "Is Eligible Summary"
+              "expression": {
+                "language": "text/cql.name",
+                "expression": "Is Eligible Summary"
+              }
             },
             {
               "path": "action.extension",
-              "expression": "Is Eligible Indicator"
+              "expression": {
+                "language": "text/cql.name",
+                "expression": "Is Eligible Indicator"
+              }
             }
           ]
         }
       ]
     },
     {
-      "triggerDefinition": [
+      "trigger": [
         {
           "type": "named-event",
-          "eventName": "patient-view"
+          "name": "patient-view"
         }
       ],
       "condition": [
         {
           "kind": "applicability",
-          "language": "text/cql.name",
-          "expression": "Exclusion Criteria"
+          "expression": {
+            "description": "Determine if the patient is ineligibile",
+            "language": "text/cql.name",
+            "expression": "Exclusion Criteria"
+          }
         }
       ]
     }
