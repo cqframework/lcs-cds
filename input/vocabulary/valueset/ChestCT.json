@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "title": "Chest CT",
   "status": "active",
+  "description" : "This value set indicates possible Utah-specific Chest CT procedures.",
   "compose": {
     "include": [
       {
