@@ -73,3 +73,13 @@ e: {
   "error" : "Error from server: Unable to provide support for code system http://hl7.org/fhir/sid/icd-9-cm"
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://hl7.org/fhir/sid/icd-9-cm",
+  "code" : "162.5"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://hl7.org/fhir/sid/icd-9-cm\" is not known (encountered paired with code = \"162.5\"); The code provided (http://hl7.org/fhir/sid/icd-9-cm#162.5) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------

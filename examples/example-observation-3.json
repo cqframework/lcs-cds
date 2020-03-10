@@ -1,0 +1,51 @@
+{
+  "resourceType": "Observation",
+  "id": "example-observation-3",
+  "meta": {
+    "versionId": "3",
+    "lastUpdated": "2020-03-06T11:00:44.465-07:00"
+  },
+  "status": "preliminary",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "72166-2",
+        "display": "Tobacco smoking status"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/example-patient-3"
+  },
+  "effectivePeriod": {
+    "start": "1960-02-11",
+    "end": "2013-02-02"
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://www.snomed.org/",
+        "code": "8517006",
+        "display": "Former smoker"
+      }
+    ]
+  },
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "8663-7",
+            "display": "Packs/day"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 1.2,
+        "unit": "Packs/day"
+      }
+    }
+  ]
+}

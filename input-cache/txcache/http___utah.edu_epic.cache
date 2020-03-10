@@ -215,3 +215,23 @@ e: {
   "error" : "Error from server: Unable to provide support for code system http://utah.edu/epic"
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://utah.edu/epic",
+  "code" : "PBG0297"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://utah.edu/epic\" is not known (encountered paired with code = \"PBG0297\"); The code provided (http://utah.edu/epic#PBG0297) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://utah.edu/epic",
+  "code" : "71250R"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://utah.edu/epic\" is not known (encountered paired with code = \"71250R\"); The code provided (http://utah.edu/epic#71250R) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------

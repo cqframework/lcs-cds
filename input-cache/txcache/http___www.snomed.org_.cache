@@ -65,3 +65,23 @@ v: {
   "error" : "The code system \"http://www.snomed.org/\" is not known (encountered paired with code = \"266919005\"); The code provided (http://www.snomed.org/#266919005) is not  valid in the value set All codes known to the system"
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.snomed.org/",
+  "code" : "428071000124103"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://www.snomed.org/\" is not known (encountered paired with code = \"428071000124103\"); The code provided (http://www.snomed.org/#428071000124103) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.snomed.org/",
+  "code" : "8517006"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://www.snomed.org/\" is not known (encountered paired with code = \"8517006\"); The code provided (http://www.snomed.org/#8517006) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------

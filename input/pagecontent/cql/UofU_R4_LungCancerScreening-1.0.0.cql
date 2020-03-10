@@ -1,4 +1,4 @@
- library UofU_R4_LungCancerScreening version '1.0.0'
+library UofU_R4_LungCancerScreening version '1.0.0'
 
 using FHIR version '4.0.0'
 

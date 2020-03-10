@@ -1,0 +1,22 @@
+{
+  "resourceType": "Procedure",
+  "id": "example-procedure-3",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2020-03-06T11:09:59.987-07:00"
+  },
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "system": "http://utah.edu/epic",
+        "code": "71250R",
+        "display": "CHEST CT SCAN"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/example-patient-3"
+  },
+  "performedDateTime": "2016-05-10"
+}
