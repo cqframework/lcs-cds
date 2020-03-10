@@ -2,14 +2,14 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas-r5/fhir-single.xsd">
   <id value="lcs-cds" />
   <url value="http://hl7.org/fhir/cqf/lcs-cds/ImplementationGuide/lcs-cds" />
-  <version value="0.1.0" />
+  <version value="1.0.0" />
   <name value="LCS_CDS" />
-  <title value="Final Recommendation Statement
-Lung Cancer: Screening" />
+  <title value="Lung Cancer Screening Implementation Guide" />
   <status value="draft" />
   <experimental value="false" />
-  <publisher value="CQF" />
-  <description value="This is a test." />
+  <publisher value="U.S. Preventive Services Task Force" />
+  <description value="Final Recommendation Statement
+Lung Cancer: Screening" />
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm" />
@@ -25,19 +25,19 @@ Lung Cancer: Screening" />
       <generation value="html" />
       <page>
         <nameUrl value="index.html" />
-        <title value="IG Home Page" />
+        <title value="LCS Implementation Guide" />
         <generation value="markdown" />
       </page>
     </page>
     <!-- copyright year is a mandatory parameter -->
     <parameter>
       <code value="copyrightyear" />
-      <value value="2019+" />
+      <value value="2020+" />
     </parameter>
     <!-- releaselabel should be the ballot status for HL7-published IGs. -->
     <parameter>
       <code value="releaselabel" />
-      <value value="CI Build" />
+      <value value="draft" />
     </parameter>
     <parameter>
       <code value="find-other-resources" />
@@ -74,7 +74,7 @@ Lung Cancer: Screening" />
     </parameter>
     <parameter>
       <code value="path-resource" />
-      <value value="input/tests"/>
+      <value value="examples" />
     </parameter>
     <parameter>
       <code value="path-resource" />
