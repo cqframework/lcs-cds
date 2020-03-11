@@ -1,0 +1,45 @@
+<div>
+    <div>Define “55 through 80”</div>
+        <div style="text-indent:25px;">Patient is currently 55 through 80 years old based on date of birth</div>
+
+    <br/>
+    
+    <div>Define “Is current smoker”</div>
+        <div style="text-indent:25px;">Observation where code = LOINC 72166-2, Tobacco smoking status</div>
+        <div style="text-indent:25px;">valueCodeableConcept where code in:</div>
+            <div style="text-indent:50px;">http://snomed.info/sct 449868002 Current every day smoker</div>
+            <div style="text-indent:50px;">http://snomed.info/sct 428041000124106 Current some day smoker</div>
+            <div style="text-indent:50px;">http://snomed.info/sct 428071000124103 Current Heavy tobacco smoker</div>
+            <div style="text-indent:50px;">http://snomed.info/sct 428061000124105 Current Light day smoker</div>
+
+    <br/>
+        
+    <div>Define “Is former smoker who quit within past 15 years”</div>
+        <div style="text-indent:25px;">Observation where code = LOINC 72166-2, Tobacco smoking status</div>
+        <div style="text-indent:25px;">valueCodeableConcept where code in:</div>
+            <div style="text-indent:50px;">http://snomed.info/sct 8517006 Former smoker</div>
+            <div style="text-indent:50px;">effectivePeriod end date is &lt; 15 years ago</div>
+
+    <br/>
+
+    <div>Define “Has lung cancer”</div>
+        <div style="text-indent:25px;">Condition where clinicalStatus in ‘active’,’recurrence’, or ’relapse’</div>
+        <div style="text-indent:25px;">Code in VSAC https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1116.89/expansion/Latest</div>
+
+    <br/>
+
+    <div>Define “Had chest CT in past year”</div>
+        <div style="text-indent:25px;">Procedure where performedDateTime &lt; 1 yr ago</div>
+        <div style="text-indent:25px;">status = completed</div>
+        <div style="text-indent:25px;">code = Utah-specific code set above</div>
+    
+    <br/>
+
+    <div>Main logic:</div>
+        <div style="text-indent:25px;">IF 55 through 80 AND (Is current smoker or Is former smoker who quit within past 15 years) AND (NOT Has lung cancer) AND (NOT Had chest CT in past year) THEN</div>
+        <div style="text-indent:25px;">Text recommendation: “Recommend shared decision making for lung cancer screening”</div>
+
+    <br/>
+
+    <!-- <img src="recommendation-functional-description-diagram.jpg" style="max-width: 790px;" /> -->
+    </div>

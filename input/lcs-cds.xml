@@ -2,9 +2,9 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas-r5/fhir-single.xsd">
   <id value="lcs-cds" />
   <url value="http://hl7.org/fhir/cqf/lcs-cds/ImplementationGuide/lcs-cds" />
-  <version value="1.0.0" />
+  <version value="0.1.0" />
   <name value="LCS_CDS" />
-  <title value="Lung Cancer Screening Implementation Guide" />
+  <title value="USPSTF Lung Cancer Screening Implementation Guide" />
   <status value="draft" />
   <experimental value="false" />
   <publisher value="U.S. Preventive Services Task Force" />
@@ -25,8 +25,18 @@ Lung Cancer: Screening" />
       <generation value="html" />
       <page>
         <nameUrl value="index.html" />
-        <title value="LCS Implementation Guide" />
+        <title value="Home" />
         <generation value="markdown" />
+      </page>
+      <!-- <page>
+        <nameUrl value="examples.html" />
+        <title value="Examples" />
+        <generation value="markdown" />
+      </page> -->
+      <page>
+        <nameUrl value="lcs-recommendation.html" />
+        <title value="LCS Recommendation" />
+        <generation value="html" />
       </page>
     </page>
     <!-- copyright year is a mandatory parameter -->
@@ -37,13 +47,12 @@ Lung Cancer: Screening" />
     <!-- releaselabel should be the ballot status for HL7-published IGs. -->
     <parameter>
       <code value="releaselabel" />
-      <value value="draft" />
+      <value value="CI Build" />
     </parameter>
     <parameter>
       <code value="find-other-resources" />
       <value value="true" />
     </parameter>
-
     <parameter>
       <code value="path-pages" />
       <value value="input/pagecontent"/>
@@ -74,7 +83,7 @@ Lung Cancer: Screening" />
     </parameter>
     <parameter>
       <code value="path-resource" />
-      <value value="examples" />
+      <value value="input/examples" />
     </parameter>
     <parameter>
       <code value="path-resource" />

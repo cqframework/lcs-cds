@@ -3,7 +3,7 @@
   "id": "lcs-cds-patient-view",
   "version": "1.0.0",
   "name": "PlanDefinition_Recommendation_Patient_View",
-  "title": "Final Recommendation Statement -- Lung Cancer Screening",
+  "title": "Plan Definition -- Lung Cancer Screening",
   "type": {
     "coding": [
       {

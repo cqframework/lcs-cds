@@ -1,0 +1,51 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas-r5/fhir-single.xsd">
+  <ul id="markdown-toc">
+     <li><a href="#rec" id="markdown-toc-rec">Final Recommendation Statement</a></li>
+     <li><a href="#funcdesc" id="markdown-toc-funcdesc">Functional Description</a></li>
+     <li><a href="#content" id="markdown-toc-content">Content</a></li>
+  </ul>
+
+  <a name="rec"> </a>
+  <h3>Final Recommendation Statement</h3>
+  <p><a href="https://www.uspreventiveservicestaskforce.org/Page/Document/RecommendationStatementFinal/lung-cancer-screening" target="_blank">USPSTF's recommendation on Lung Cancer Screening</a></p>
+  <p>
+    <strong>The USPSTF recommends annual screening for lung cancer with low-dose computed tomography (LDCT) in adults aged 55 to 80 years who have a 30 pack-year smoking history and currently smoke or have quit within the past 15 years. Screening should be discontinued once a person has not smoked for 15 years or develops a health problem that substantially limits life expectancy or the ability or willingness to have curative lung surgery.<a href="#note1">1</a></strong>
+  </p>
+
+  <a name="funcdesc"> </a>
+  <h3>Functional Description</h3>
+
+    {% include lcs-recommendation-functional-description.html %}
+
+  <br/>
+
+  <a name="content"> </a>
+  <h3>Content</h3>
+
+  <p>The following artifacts formalize the description of the logic and behavior defined by this recommendation.</p>
+
+  <p>Recommendation A.2 resources.
+  <table class="list">
+     <thead>
+     <tr><th>Resource</th><th>Type</th><th>Description</th></tr>
+     </thead>
+     <tbody>
+       <tr><td><a href="PlanDefinition-lcs-cds-patient-view.html">Recommendation LCS - Plan Definition</a></td><td><a href="{{site.data.fhir.path}}plandefinition.html">PlanDefinition</a></td><td>Event-Condition-Action rule that implements behavior for USPSTF's Lung Cancer Screening Guideline Recommendation</td></tr>
+       <tr><td><a href="Library-uofu-r4-lungcancerscreening.html">LCS Recommendation Library</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides logic for lung cancer screening.</td></tr>
+     </tbody>
+  </table>
+
+  <p></p>
+
+  <a name="commonlibraries"> </a>
+  <p>The A.2 Recommendation implementation depends on the following common libraries.
+  <table class="list">
+      <thead>
+        <tr><th>Resource</th><th>Type</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><a href="Library-fhirhelpers.html">FHIR Helpers</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides common logic for modeling FHIR R4.</td></tr>
+        <tr><td><a href="Library-matglobalcommonfunctions-fhir4.html">Global Common Functions</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides common global logic.</td></tr>
+      </tbody>
+  </table>
+</div>
