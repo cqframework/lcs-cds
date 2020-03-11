@@ -1,7 +1,7 @@
 {
   "resourceType" : "ValueSet",
   "id" : "observation-current-smoker",
-  "url" : "TODO",
+  "url" : "http://hl7.org/fhir/cqf/lcs-cds/ImplementationGuide/lcs-cds/ValueSet/observation-current-smoker",
   "version" : "1.0.0",
   "title" : "Current Smoker Status",
   "status" : "active",

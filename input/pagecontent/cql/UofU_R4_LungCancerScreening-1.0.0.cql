@@ -11,7 +11,7 @@ codesystem "LOINC": 'http://loinc.org'
 
 valueset "Lung Cancer":  'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1116.89'
 valueset "Smoking Status": 'http://hl7.org/fhir/us/core/ValueSet/us-core-observation-smokingstatus'
-valueset "Current Smoker": 'TODO'
+valueset "Current Smoker": 'http://hl7.org/fhir/cqf/lcs-cds/ImplementationGuide/lcs-cds/ValueSet/observation-current-smoker'
 valueset "Chest CT": 'http://utah.edu/epic/proc_code'
 
 code "Tobacco Smoking Status": '72166-2' from "LOINC"
