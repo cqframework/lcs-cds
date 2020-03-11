@@ -5,7 +5,7 @@ using FHIR version '4.0.0'
 include FHIRHelpers version '4.0.0' called FHIRHelpers
 include MATGlobalCommonFunctions_FHIR4 version '4.0.000' called Global
 
-codesystem "SNOMED": 'http://www.snomed.org/'
+codesystem "SNOMED": 'http://snomed.info/sct'
 codesystem "UTAH_EDU": 'http://utah.edu/epic'
 codesystem "LOINC": 'http://loinc.org'
 
@@ -46,11 +46,28 @@ define "Is Eligible Indicator":
   else null
 
 define "Exclusion Criteria":
-  "55 through 80"
-  and (
+  (
     not ("Is current smoker" or "Is former smoker who quit within past 15 years")
     or "Has lung cancer"
   )
+
+define "Exclusion Detail":
+  if "Exclusion Criteria"
+    then First(Patient.name).text +
+      ': Born ' + ToString(Patient.birthDate) +
+      ' (Age: ' + ToString(AgeInYears()) +
+      '), Gender: ' + Patient.gender
+    else null
+
+define "Exclusion Summary":
+  if "Exclusion Criteria"
+    then 'Patient is not currently recommended for lung cancer screening'
+  else null
+
+define "Exclusion Indicator":
+  if "Exclusion Criteria"
+    then 'info'
+  else null
 
 define "55 through 80":
   AgeInYears() >= 55 and AgeInYears() <= 80
@@ -71,22 +88,16 @@ define "Is former smoker who quit within past 15 years":
   )
 
 define "Packs per day":
-  if "Is current smoker" or "Is former smoker who quit within past 15 years"
-    then [Observation] O
-      return FHIRHelpers.ToQuantity(singleton from (O.component C where FHIRHelpers.ToConcept(C.code) ~ "PACKS A DAY").value).value
-  else null
+  [Observation] O
+    return FHIRHelpers.ToQuantity(singleton from (O.component C where FHIRHelpers.ToConcept(C.code) ~ "PACKS A DAY").value).value
 
 define "Duration years":
-  if "Is current smoker" or "Is former smoker who quit within past 15 years"
-    then [Observation] O
-      return duration in years between O.effective.start and O.effective.end
-  else null
+  [Observation] O
+    return duration in years between O.effective.start and O.effective.end
 
 define "Duration days":
-  if "Is current smoker" or "Is former smoker who quit within past 15 years"
-    then [Observation] O
-      return duration in days between O.effective.start and O.effective.end
-  else null
+  [Observation] O
+    return duration in days between O.effective.start and O.effective.end
 
 define "Has 30 pack-year smoking history":
 exists (

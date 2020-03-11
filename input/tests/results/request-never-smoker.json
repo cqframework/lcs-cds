@@ -1,0 +1,93 @@
+{
+    "hookInstance": "test",
+    "fhirServer": "http://localhost:8080/cqf-ruler-r4/fhir",
+    "hook": "patient-view",
+    "applyCql": true,
+    "context": {
+        "userId": "Practitioner/SMART-1234",
+        "patientId": "Patient/example-patient-1"
+    },
+    "prefetch": {
+        "item1": {
+            "response": {
+                "status": "200 OK"
+            },
+            "resource": {
+                "resourceType": "Patient",
+                "id": "example-patient-1",
+                "meta": {
+                    "versionId": "2",
+                    "lastUpdated": "2020-03-04T12:25:25.302-07:00"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div class=\"hapiHeaderText\">John <b>ALLBRIGHT </b></div><table class=\"hapiPropertyTable\"><tbody><tr><td>Date of birth</td><td><span>28 September 1939</span></td></tr></tbody></table></div>"
+                },
+                "active": true,
+                "name": [
+                    {
+                        "text": "John Allbright",
+                        "family": "Allbright",
+                        "given": [
+                            "John"
+                        ]
+                    }
+                ],
+                "gender": "male",
+                "birthDate": "1939-09-28"
+            }
+        },
+        "item2": {
+            "response": {
+                "status": "200 OK"
+            },
+            "resource": {
+                "resourceType": "Observation",
+                "id": "example-observation-1",
+                "meta": {
+                    "versionId": "7",
+                    "lastUpdated": "2020-03-06T11:01:09.707-07:00"
+                },
+                "status": "preliminary",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "72166-2",
+                            "display": "Tobacco smoking status"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/example-patient-1"
+                },
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "266919005",
+                            "display": "Never smoker"
+                        }
+                    ]
+                },
+                "component": [
+                    {
+                        "code": {
+                            "coding": [
+                                {
+                                    "system": "http://loinc.org",
+                                    "code": "8663-7",
+                                    "display": "Packs/day"
+                                }
+                            ]
+                        },
+                        "valueQuantity": {
+                            "value": 0,
+                            "unit": "Packs/day"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

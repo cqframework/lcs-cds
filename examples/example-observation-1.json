@@ -21,7 +21,7 @@
   "valueCodeableConcept": {
     "coding": [
       {
-        "system": "http://www.snomed.org/",
+        "system": "http://snomed.info/sct",
         "code": "266919005",
         "display": "Never smoker"
       }

@@ -1,0 +1,10 @@
+{
+  "cards": [
+    {
+      "summary": "Patient is not currently recommended for lung cancer screening",
+      "indicator": "info",
+      "detail": "Julie Smokesalot: Born 1957-08-18 (Age: 62), Gender: female",
+      "source": {}
+    }
+  ]
+}

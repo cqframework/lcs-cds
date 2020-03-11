@@ -1,59 +1,68 @@
 Running tests.
-Data path: D:\src\code\UofU_LCS\input\tests\UofU_R4_LungCancerScreening-1.0.0
-Terminology path: D:\src\code\UofU_LCS\input\vocabulary\valueset
+Data path: D:\src\code\lcs-cds\input\tests\UofU_R4_LungCancerScreening-1.0.0
+Terminology path: D:\src\code\lcs-cds\input\vocabulary\valueset
 Test Never-Smoker
-Fri Mar 06 2020 14:14:29 GMT-0700 (Mountain Standard Time)
+Tue Mar 10 2020 19:40:56 GMT-0600 (Mountain Daylight Time)
 UofU_R4_LungCancerScreening.Is current smoker = false
-UofU_R4_LungCancerScreening.Duration days = null
-UofU_R4_LungCancerScreening.Packs per day = null
-UofU_R4_LungCancerScreening.Duration years = null
+UofU_R4_LungCancerScreening.Duration days = [null]
+UofU_R4_LungCancerScreening.Packs per day = [0]
+UofU_R4_LungCancerScreening.Duration years = [null]
+UofU_R4_LungCancerScreening.Exclusion Summary = Patient is not currently recommended for lung cancer screening
 UofU_R4_LungCancerScreening.Is Eligible Detail = null
 UofU_R4_LungCancerScreening.Inclusion Criteria = false
+UofU_R4_LungCancerScreening.Exclusion Detail = John Allbright: Born 1939-09-28 (Age: 80), Gender: male
 UofU_R4_LungCancerScreening.Has lung cancer = false
 UofU_R4_LungCancerScreening.Is Eligible Summary = null
 UofU_R4_LungCancerScreening.Has 30 pack-year smoking history = false
-UofU_R4_LungCancerScreening.Patient = org.hl7.fhir.r4.model.Patient@38ba8b45
+UofU_R4_LungCancerScreening.Patient = org.hl7.fhir.r4.model.Patient@24954e82
 UofU_R4_LungCancerScreening.Exclusion Criteria = true
 UofU_R4_LungCancerScreening.Is Eligible Indicator = null
 UofU_R4_LungCancerScreening.Had chest CT in past year = false
+UofU_R4_LungCancerScreening.Exclusion Indicator = info
 UofU_R4_LungCancerScreening.55 through 80 = true
 UofU_R4_LungCancerScreening.Is former smoker who quit within past 15 years = false
-elapsed: 7.696 seconds
-
-Test Heavy-Smoker
-Fri Mar 06 2020 14:14:29 GMT-0700 (Mountain Standard Time)
-UofU_R4_LungCancerScreening.Is current smoker = true
-UofU_R4_LungCancerScreening.Duration days = [15541]
-UofU_R4_LungCancerScreening.Packs per day = [3]
-UofU_R4_LungCancerScreening.Duration years = [42]
-UofU_R4_LungCancerScreening.Is Eligible Detail = null
-UofU_R4_LungCancerScreening.Inclusion Criteria = false
-UofU_R4_LungCancerScreening.Has lung cancer = true
-UofU_R4_LungCancerScreening.Is Eligible Summary = null
-UofU_R4_LungCancerScreening.Has 30 pack-year smoking history = true
-UofU_R4_LungCancerScreening.Patient = org.hl7.fhir.r4.model.Patient@195cbf5e
-UofU_R4_LungCancerScreening.Exclusion Criteria = true
-UofU_R4_LungCancerScreening.Is Eligible Indicator = null
-UofU_R4_LungCancerScreening.Had chest CT in past year = true
-UofU_R4_LungCancerScreening.55 through 80 = true
-UofU_R4_LungCancerScreening.Is former smoker who quit within past 15 years = false
-elapsed: 8.226 seconds
+elapsed: 8.944 seconds
 
 Test Former-Smoker
-Fri Mar 06 2020 14:14:29 GMT-0700 (Mountain Standard Time)
+Tue Mar 10 2020 19:40:56 GMT-0600 (Mountain Daylight Time)
 UofU_R4_LungCancerScreening.Is current smoker = false
 UofU_R4_LungCancerScreening.Duration days = [19350]
 UofU_R4_LungCancerScreening.Packs per day = [1.2]
 UofU_R4_LungCancerScreening.Duration years = [52]
+UofU_R4_LungCancerScreening.Exclusion Summary = null
 UofU_R4_LungCancerScreening.Is Eligible Detail = Potential eligible patient: Jake Lungsahoy: Born 1942-01-14 (Age: 78), Gender: male
 UofU_R4_LungCancerScreening.Inclusion Criteria = true
+UofU_R4_LungCancerScreening.Exclusion Detail = null
 UofU_R4_LungCancerScreening.Has lung cancer = false
 UofU_R4_LungCancerScreening.Is Eligible Summary = Recommend shared decision making for lung cancer screening
 UofU_R4_LungCancerScreening.Has 30 pack-year smoking history = true
-UofU_R4_LungCancerScreening.Patient = org.hl7.fhir.r4.model.Patient@726ef6aa
+UofU_R4_LungCancerScreening.Patient = org.hl7.fhir.r4.model.Patient@278c998
 UofU_R4_LungCancerScreening.Exclusion Criteria = false
 UofU_R4_LungCancerScreening.Is Eligible Indicator = info
 UofU_R4_LungCancerScreening.Had chest CT in past year = false
+UofU_R4_LungCancerScreening.Exclusion Indicator = null
 UofU_R4_LungCancerScreening.55 through 80 = true
 UofU_R4_LungCancerScreening.Is former smoker who quit within past 15 years = true
-elapsed: 8.244 seconds
+elapsed: 9.293 seconds
+
+Test Heavy-Smoker
+Tue Mar 10 2020 19:40:56 GMT-0600 (Mountain Daylight Time)
+UofU_R4_LungCancerScreening.Is current smoker = true
+UofU_R4_LungCancerScreening.Duration days = [15541]
+UofU_R4_LungCancerScreening.Packs per day = [3]
+UofU_R4_LungCancerScreening.Duration years = [42]
+UofU_R4_LungCancerScreening.Exclusion Summary = Patient is not currently recommended for lung cancer screening
+UofU_R4_LungCancerScreening.Is Eligible Detail = null
+UofU_R4_LungCancerScreening.Inclusion Criteria = false
+UofU_R4_LungCancerScreening.Exclusion Detail = Julie Smokesalot: Born 1957-08-18 (Age: 62), Gender: female
+UofU_R4_LungCancerScreening.Has lung cancer = true
+UofU_R4_LungCancerScreening.Is Eligible Summary = null
+UofU_R4_LungCancerScreening.Has 30 pack-year smoking history = true
+UofU_R4_LungCancerScreening.Patient = org.hl7.fhir.r4.model.Patient@215a329c
+UofU_R4_LungCancerScreening.Exclusion Criteria = true
+UofU_R4_LungCancerScreening.Is Eligible Indicator = null
+UofU_R4_LungCancerScreening.Had chest CT in past year = true
+UofU_R4_LungCancerScreening.Exclusion Indicator = info
+UofU_R4_LungCancerScreening.55 through 80 = true
+UofU_R4_LungCancerScreening.Is former smoker who quit within past 15 years = false
+elapsed: 9.399 seconds

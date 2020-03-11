@@ -1,0 +1,10 @@
+{
+  "cards": [
+    {
+      "summary": "Patient is not currently recommended for lung cancer screening",
+      "indicator": "info",
+      "detail": "John Allbright: Born 1939-09-28 (Age: 80), Gender: male",
+      "source": {}
+    }
+  ]
+}

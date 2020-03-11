@@ -77,6 +77,63 @@
           ]
         }
       ]
+    },
+    {
+      "trigger": [
+        {
+          "type": "named-event",
+          "name": "patient-view"
+        }
+      ],
+      "condition": [
+        {
+          "kind": "applicability",
+          "expression": {
+            "description": "Determine if the patient is excluded for Lung Cancer Screening",
+            "language": "text/cql.name",
+            "expression": "Exclusion Criteria"
+          }
+        }
+      ],
+      "action": [
+        {
+          "title": "Meets ineligibility criteria",
+          "description": "Identifies a patient who does not meet eligibility criteria",
+          "condition": [
+            {
+              "kind": "applicability",
+              "expression": {
+                "description": "Determine if the patient is excluded for Lung Cancer Screening",
+                "language": "text/cql.name",
+                "expression": "Exclusion Criteria"
+              }
+            }
+          ],
+          "dynamicValue": [
+            {
+              "path": "action.description",
+              "expression": {
+                "language": "text/cql.name",
+                "expression": "Exclusion Detail"
+              }
+            },
+            {
+              "path": "action.title",
+              "expression": {
+                "language": "text/cql.name",
+                "expression": "Exclusion Summary"
+              }
+            },
+            {
+              "path": "action.extension",
+              "expression": {
+                "language": "text/cql.name",
+                "expression": "Exclusion Indicator"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

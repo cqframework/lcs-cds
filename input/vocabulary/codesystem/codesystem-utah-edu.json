@@ -1,0 +1,110 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "codesystem-utah-edu",
+  "status": "draft",
+  "name": " http://utah.edu/epic",
+  "title": "codesystem-utah-edu",
+  "description": "Codesystem for the University of Utah Chest CT Procedure codes.",
+  "publisher": "U.S. Preventive Services Task Force",
+  "date": "2020-03-10",
+  "valueset": "ValueSet/http://utah.edu/epic/proc_code",
+  "content": "example",
+"concept": [
+    {
+      "code": "MI147",
+      "display": "CT CHEST FOR LUNG CANCER SCREENING"
+    },
+    {
+      "code": "IMG10031",
+      "display": "CT CHEST LUNG CANCER SCREENING"
+    },
+    {
+      "code": "71250LS",
+      "display": "CT LUNG CANCER SCREENING"
+    },
+    {
+      "code": "4000592",
+      "display": "HB LOW DOSE CT LUNG SCREENING"
+    },
+    {
+      "code": "PBG0297",
+      "display": "LOW DOSE CT SCAN (LDCT) FOR LUNG CANCER SCREENING"
+    },
+    {
+      "code": "G0297",
+      "display": "LOW DOSE CT SCAN (LDCT) FOR LUNG CANCER SCREENING"
+    },
+    {
+      "code": "S8032",
+      "display": "LOW-DOSE COMPUTED TOMOGRAPHY LUNG CANCER SCRNG"
+    },
+    {
+      "code": "PBS8032",
+      "display": "LOW-DOSE COMPUTED TOMOGRAPHY LUNG CANCER SCRNG"
+    },
+    {
+      "code": "71250R",
+      "display": "CHEST CT SCAN"
+    },
+    {
+      "code": "71260F",
+      "display": "CHEST CT SCAN W/CONTRAST"
+    },
+    {
+      "code": "71260I",
+      "display": "CHEST CT SCAN W/CONTRAST"
+    },
+    {
+      "code": "71260D",
+      "display": "CHEST CT SCAN W/CONTRAST"
+    },
+    {
+      "code": "71260G",
+      "display": "CHEST CT SCAN W/CONTRAST"
+    },
+    {
+      "code": "71250U",
+      "display": "CHEST CT W/O CONTRAST HIGH RES"
+    },
+    {
+      "code": "71270G",
+      "display": "CHEST CT W/O THEN W/CONTRAST"
+    },
+    {
+      "code": "71270E",
+      "display": "CHEST CT W/O THEN W/CONTRAST"
+    },
+    {
+      "code": "IMG10032",
+      "display": "CT CHEST W IV CONT"
+    },
+    {
+      "code": "IMG10034",
+      "display": "CT CHEST WO IV CONT"
+    },
+    {
+      "code": "IMG10035",
+      "display": "CT CHEST WO IV CONT HIGH RES"
+    },
+    {
+      "code": "IMG10036",
+      "display": "CT CHEST WWO IV CONT"
+    },
+    {
+      "code": "4000418",
+      "display": "HB PET W CT, CHEST, HEAD/NECK"
+    },
+    {
+      "code": "IMG20116",
+      "display": "OS CT CHEST NO RPT"
+    },
+    {
+      "code": "IMG21106",
+      "display": "OS CT CHEST RPT"
+    },
+    {
+      "code": "76140AO",
+      "display": "OUTSIDE FILM CT CHEST"
+    }
+  ]
+}

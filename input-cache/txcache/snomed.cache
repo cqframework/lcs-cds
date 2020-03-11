@@ -98,3 +98,196 @@ e: {
   "error" : ""
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "266919005"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "Never smoked",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "428071000124103"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "unable to find code 428071000124103 in http://snomed.info/sct (version http://snomed.info/sct/900000000000207008/version/20200131)"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "8517006"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "Ex-smoker",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "266919005",
+  "display" : "Never smoker"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "Never smoked",
+  "severity" : "warning",
+  "error" : "The display \"Never smoker\" is not a valid display for the code {http://snomed.info/sct}266919005 - should be one of [\"Never smoked\",\"Never smoked tobacco\",\"Never smoked tobacco (finding)\"]"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "428071000124103",
+  "display" : "Current Heavy tobacco smoker"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "unable to find code 428071000124103 in http://snomed.info/sct (version http://snomed.info/sct/900000000000207008/version/20200131)"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "8517006",
+  "display" : "Former smoker"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "Ex-smoker",
+  "severity" : "warning",
+  "error" : "The display \"Former smoker\" is not a valid display for the code {http://snomed.info/sct}8517006 - should be one of [Ex-smoker,\"Cessation of smoking\",\"Ex-smoker (finding)\"]"
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "concept" : [{
+        "code" : "449868002",
+        "display" : "Current every day smoker"
+      },
+      {
+        "code" : "428041000124106",
+        "display" : "Current some day smoker"
+      },
+      {
+        "code" : "428071000124103",
+        "display" : "Current Heavy tobacco smoker"
+      },
+      {
+        "code" : "428061000124105",
+        "display" : "Current Light tobacco smoker"
+      }]
+    }]
+  }
+}}####
+e: {
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "expansion" : {
+    "identifier" : "urn:uuid:2d27a181-02f2-4ab1-baf5-19ce5908990e",
+    "timestamp" : "2020-03-11T01:43:07.518Z",
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueString" : "-1"
+    },
+    {
+      "name" : "excludeNested",
+      "valueString" : "-1"
+    },
+    {
+      "name" : "version",
+      "valueString" : "http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20200131"
+    }],
+    "contains" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "449868002",
+      "display" : "Current every day smoker"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "428041000124106",
+      "display" : "Current some day smoker"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "428071000124103",
+      "display" : "Current Heavy tobacco smoker"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "428061000124105",
+      "display" : "Current Light tobacco smoker"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : true, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "concept" : [{
+        "code" : "449868002",
+        "display" : "Current every day smoker"
+      },
+      {
+        "code" : "428041000124106",
+        "display" : "Current some day smoker"
+      },
+      {
+        "code" : "428071000124103",
+        "display" : "Current Heavy tobacco smoker"
+      },
+      {
+        "code" : "428061000124105",
+        "display" : "Current Light tobacco smoker"
+      }]
+    }]
+  }
+}}####
+e: {
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "expansion" : {
+    "identifier" : "urn:uuid:a719ec24-189c-4bf0-aa2b-d2439794c31a",
+    "timestamp" : "2020-03-11T01:43:10.752Z",
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueString" : "-1"
+    },
+    {
+      "name" : "version",
+      "valueString" : "http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20200131"
+    }],
+    "contains" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "449868002",
+      "display" : "Current every day smoker"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "428041000124106",
+      "display" : "Current some day smoker"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "428071000124103",
+      "display" : "Current Heavy tobacco smoker"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "428061000124105",
+      "display" : "Current Light tobacco smoker"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------

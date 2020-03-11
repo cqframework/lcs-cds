@@ -25,7 +25,7 @@
   "valueCodeableConcept": {
     "coding": [
       {
-        "system": "http://www.snomed.org/",
+        "system": "http://snomed.info/sct",
         "code": "428071000124103",
         "display": "Current Heavy tobacco smoker"
       }
