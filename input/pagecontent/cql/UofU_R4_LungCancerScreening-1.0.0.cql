@@ -87,32 +87,31 @@ define "Is former smoker who quit within past 15 years":
       where O.status in { 'final', 'amended' }
       and FHIRHelpers.ToCode(singleton from O.code.coding) ~ "Tobacco Smoking Status"
       and singleton from FHIRHelpers.ToConcept(O.value as CodeableConcept).codes ~ "Former Smoker"
+      and O.effective.end is not null
       and duration in years between O.effective.end and Now() < 15
   )
 
 define "Packs per day":
-  [Observation] O
+  Avg([Observation] O
     where O.status in { 'final', 'amended' }
-      return FHIRHelpers.ToQuantity(singleton from (O.component C where FHIRHelpers.ToConcept(C.code) ~ "PACKS A DAY").value).value
+      return FHIRHelpers.ToQuantity(singleton from (O.component C where FHIRHelpers.ToConcept(C.code) ~ "PACKS A DAY").value).value)
 
 define "Duration years":
-  [Observation] O
+  Avg([Observation] O
     where O.status in { 'final', 'amended' }
-      return duration in years between O.effective.start and O.effective.end
+      return duration in years between O.effective.start and O.effective.end)
 
 define "Duration days":
-  [Observation] O
+  Avg([Observation] O
     where O.status in { 'final', 'amended' }
-      return duration in days between O.effective.start and O.effective.end
+      return duration in days between O.effective.start and O.effective.end)
 
 define "Has 30 pack-year smoking history":
-exists (
-  if "Is current smoker" or "Is former smoker who quit within past 15 years"
-    then [Observation] O
+  exists (
+    [Observation] O
       where O.status in { 'final', 'amended' }
-      and First("Duration days") * First("Packs per day") / First("Duration years") >= 30
-  else null
-)
+      and "Duration days" * "Packs per day" / "Duration years" >= 30
+  )
 
 define "Has lung cancer":
   exists (
@@ -123,8 +122,8 @@ define "Has lung cancer":
 
 define "Had chest CT in past year":
   exists(
-  [Procedure] P
-    where P.status = 'completed'
-    and singleton from FHIRHelpers.ToConcept(P.code as CodeableConcept).codes in "Chest CT"
-    and duration in years between P.performed and Now() < 1
+    [Procedure] P
+      where P.status = 'completed'
+      and singleton from FHIRHelpers.ToConcept(P.code as CodeableConcept).codes in "Chest CT"
+      and duration in years between P.performed and Now() < 1
   )
