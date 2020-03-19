@@ -6,14 +6,16 @@ include FHIRHelpers version '4.0.0' called FHIRHelpers
 include MATGlobalCommonFunctions_FHIR4 version '4.0.000' called Global
 
 codesystem "SNOMED": 'http://snomed.info/sct'
+// REVIEW: Should be the URL of the proc_code CodeSystem: http://utah.edu/fhir/lcs-cds/CodeSystem/proc_code
 codesystem "UTAH_EDU": 'http://utah.edu/epic'
 codesystem "LOINC": 'http://loinc.org'
 
 valueset "Lung Cancer":  'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1116.89'
 valueset "Smoking Status": 'http://hl7.org/fhir/us/core/ValueSet/us-core-observation-smokingstatus'
+// REVIEW: URL needs to match declared URL of the value set resource
 valueset "Current Smoker": 'http://hl7.org/fhir/cqf/lcs-cds/ImplementationGuide/lcs-cds/ValueSet/observation-current-smoker'
+// REVIEW: URL needs to match declared URL of the value set resource
 valueset "Chest CT": 'http://utah.edu/epic/proc_code'
-
 
 code "Tobacco Smoking Status": '72166-2' from "LOINC"
 code "Former Smoker": '8517006' from "SNOMED"
@@ -73,6 +75,15 @@ define "Exclusion Indicator":
 define "55 through 80":
   AgeInYears() >= 55 and AgeInYears() <= 80
 
+/* REVIEW:
+1. Pulling a coding out from a codeableconcept like this is an anti-pattern, codeable concepts should be almost always be treated at the concept level
+2. Why not put the reference to "Tobacco Smoking Status" in the retrieve? Observation.code is the primary code path for the resource?
+3. What happens if there are multiple observations that meet this? We need to consider only the most recent tobacco smoking status observation,
+and make sure that one is Current Smoker, using the issued element to determine the most recent
+4. For consistency and reuse, consider defining a "Current smoker observation" and using that from within this
+*/
+/* QUESTION: Do we want to consider a limit for how far back to look for smoking status observations?
+*/
 define "Is current smoker":
   exists (
     [Observation] O
@@ -81,6 +92,15 @@ define "Is current smoker":
       and FHIRHelpers.ToConcept(O.value as CodeableConcept) in "Current Smoker"
   )
 
+/* REVIEW:
+1. Same issue with singleton from coding
+2. Same issue with observation and the retrieve
+3. Don't extract a singleton from the codeable concept for comparison, just let the implicit conversion from a code to a concept happen
+4. Don't need to test O.effective.end is not null, the null will propagate through the period comparison and result in false
+5. Same issue with multiple observations, consider only the most recent observation
+6. Consider defining a "Current smoker observation" and reusing in this expression and the other one related to determining pack-year history
+7. Characterization of the duration is a bit hard to follow, consider O.effective ends 15 years or less before Today()
+*/
 define "Is former smoker who quit within past 15 years":
   exists (
     [Observation] O
@@ -91,6 +111,13 @@ define "Is former smoker who quit within past 15 years":
       and duration in years between O.effective.end and Now() < 15
   )
 
+/* REVIEW:
+1. If you assume multiple observations indicating packs per day, the likelihood of that
+presenting a consistent enough history across time to support actual calculation is quite low.
+We ought to be using the most recent smoking status observation that indicates a current smoker.
+2. Pulling the packs/day value from the component looks good
+3. Suggest reusing the "Current smoker observation" definition from above to perform this calculation, all of these would go away then...
+*/
 define "Packs per day":
   Avg([Observation] O
     where O.status in { 'final', 'amended' }
@@ -106,6 +133,16 @@ define "Duration days":
     where O.status in { 'final', 'amended' }
       return duration in days between O.effective.start and O.effective.end)
 
+/* REVIEW:
+1. The "Duration years" reference here isn't right, the result of Duration days * Packs per day would be number of packs, need to divide by days / year to get pack years (i.e. divide by 365)
+2. However, pack-year calculation is actually packs per day * number of years (note that for this calculation, we actually want the duration in days / 365 to get annum, not calendar years)
+3. So:
+define "Pack-years":
+  "Current smoker" O
+    let PacksPerDay: FHIRHelpers.ToQuantity(singleton from (O.component C where FHIRHelpers.ToConcept(C.code) ~ "PACKS A DAY").value)
+    let DurationInDays: duration in days between O.effective.start and O.effective.end
+  return PacksPerDay * (DurationInDays / 365)
+*/
 define "Has 30 pack-year smoking history":
   exists (
     [Observation] O
@@ -113,6 +150,11 @@ define "Has 30 pack-year smoking history":
       and "Duration days" * "Packs per day" / "Duration years" >= 30
   )
 
+/* REVIEW:
+1. Same issue with singleton from
+2. Same issue with retrieve terminology target
+3. Don't use lists to construct value sets like this, MUST create a value set for this
+*/
 define "Has lung cancer":
   exists (
     [Condition] C
@@ -120,6 +162,12 @@ define "Has lung cancer":
       and singleton from FHIRHelpers.ToConcept(C.code as CodeableConcept).codes in "Lung Cancer"
   )
 
+/* REVIEW:
+1. Same issue with singleton from
+2. Same issue with retrieve not using terminology target
+3. Note that performed can be a period or datetime, logic needs to account for that (use Normalize Interval from GlobalCommon)
+4. Characterization is a bit hard to follow, why not just say "performed ends 1 year or less before Today()"?
+*/
 define "Had chest CT in past year":
   exists(
     [Procedure] P
