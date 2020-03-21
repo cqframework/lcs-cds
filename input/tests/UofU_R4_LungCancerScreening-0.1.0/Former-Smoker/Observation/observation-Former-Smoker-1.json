@@ -2,8 +2,9 @@
   "resourceType": "Observation",
   "id": "observation-Former-Smoker-1",
   "meta": {
-    "versionId": "3",
-    "lastUpdated": "2020-03-06T11:00:44.465-07:00"
+    "versionId": "2",
+    "lastUpdated": "2020-03-21T10:28:54.840-06:00",
+    "source": "#ghkLQm9KYtkdBVIv"
   },
   "status": "final",
   "code": {
@@ -22,6 +23,7 @@
     "start": "1960-02-11",
     "end": "2013-02-02"
   },
+  "issued": "2014-04-02T00:00:00Z",
   "valueCodeableConcept": {
     "coding": [
       {

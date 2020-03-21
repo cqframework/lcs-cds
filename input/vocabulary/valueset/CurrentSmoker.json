@@ -3,7 +3,7 @@
   "id" : "currentsmoker",
   "url" : "http://utah.edu/fhir/lcs-cds/ValueSet/currentsmoker",
   "version" : "0.1.0",
-  "name": "Currentmoker",
+  "name": "CurrentSmoker",
   "title" : "Current Smoker Status",
   "status" : "active",
   "date" : "2020-03-04T00:00:00+10:00",

@@ -1,11 +1,12 @@
 {
   "resourceType": "Observation",
-  "id": "observation-Never-Smoker-1",
+  "id": "observation-Former-Smoker-2",
   "meta": {
-    "versionId": "7",
-    "lastUpdated": "2020-03-06T11:01:09.707-07:00"
+    "versionId": "2",
+    "lastUpdated": "2020-03-21T10:28:54.840-06:00",
+    "source": "#ghkLQm9KYtkdBVIv"
   },
-  "status": "final",
+  "status": "amended",
   "code": {
     "coding": [
       {
@@ -16,15 +17,19 @@
     ]
   },
   "subject": {
-    "reference": "Patient/Never-Smoker"
+    "reference": "Patient/Former-Smoker"
   },
-  "issued": "1963-05-15T00:00:00Z",
+  "effectivePeriod": {
+    "start": "1960-02-11",
+    "end": "2013-02-02"
+  },
+  "issued": "1988-01-05T01:00:00Z",
   "valueCodeableConcept": {
     "coding": [
       {
         "system": "http://snomed.info/sct",
-        "code": "266919005",
-        "display": "Never smoker"
+        "code": "8517006",
+        "display": "Former smoker"
       }
     ]
   },
@@ -40,7 +45,7 @@
         ]
       },
       "valueQuantity": {
-        "value": 0,
+        "value": 1.0,
         "unit": "Packs/day"
       }
     }
