@@ -1,4 +1,4 @@
-library UofU_R4_LungCancerScreening version '1.0.0'
+library UofU_R4_LungCancerScreening version '0.1.0'
 
 using FHIR version '4.0.0'
 
@@ -6,16 +6,13 @@ include FHIRHelpers version '4.0.0' called FHIRHelpers
 include MATGlobalCommonFunctions_FHIR4 version '4.0.000' called Global
 
 codesystem "SNOMED": 'http://snomed.info/sct'
-// REVIEW: Should be the URL of the proc_code CodeSystem: http://utah.edu/fhir/lcs-cds/CodeSystem/proc_code
-codesystem "UTAH_EDU": 'http://utah.edu/epic'
+codesystem "UTAH_EDU": 'http://utah.edu/fhir/lcs-cds/CodeSystem/proc_code'
 codesystem "LOINC": 'http://loinc.org'
 
 valueset "Lung Cancer":  'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1116.89'
 valueset "Smoking Status": 'http://hl7.org/fhir/us/core/ValueSet/us-core-observation-smokingstatus'
-// REVIEW: URL needs to match declared URL of the value set resource
-valueset "Current Smoker": 'http://hl7.org/fhir/cqf/lcs-cds/ImplementationGuide/lcs-cds/ValueSet/observation-current-smoker'
-// REVIEW: URL needs to match declared URL of the value set resource
-valueset "Chest CT": 'http://utah.edu/epic/proc_code'
+valueset "Current Smoker": 'http://utah.edu/fhir/lcs-cds/ValueSet/currentsmoker'
+valueset "Chest CT": 'http://utah.edu/fhir/lcs-cds/ValueSet/chest_ct_proc_code'
 
 code "Tobacco Smoking Status": '72166-2' from "LOINC"
 code "Former Smoker": '8517006' from "SNOMED"
@@ -107,7 +104,6 @@ define "Is former smoker who quit within past 15 years":
       where O.status in { 'final', 'amended' }
       and FHIRHelpers.ToCode(singleton from O.code.coding) ~ "Tobacco Smoking Status"
       and singleton from FHIRHelpers.ToConcept(O.value as CodeableConcept).codes ~ "Former Smoker"
-      and O.effective.end is not null
       and duration in years between O.effective.end and Now() < 15
   )
 

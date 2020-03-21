@@ -1,8 +1,9 @@
 {
   "resourceType" : "ValueSet",
-  "id" : "observation-current-smoker",
-  "url" : "http://hl7.org/fhir/cqf/lcs-cds/ImplementationGuide/lcs-cds/ValueSet/observation-current-smoker",
-  "version" : "1.0.0",
+  "id" : "currentsmoker",
+  "url" : "http://utah.edu/fhir/lcs-cds/ValueSet/currentsmoker",
+  "version" : "0.1.0",
+  "name": "Currentmoker",
   "title" : "Current Smoker Status",
   "status" : "active",
   "date" : "2020-03-04T00:00:00+10:00",

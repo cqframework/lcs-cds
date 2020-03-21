@@ -1,0 +1,24 @@
+  <p>Recommendation LCS resources.
+  <table class="list">
+     <thead>
+     <tr><th>Resource</th><th>Type</th><th>Description</th></tr>
+     </thead>
+     <tbody>
+       <tr><td><a href="PlanDefinition-lcs-cds-patient-view.html">Recommendation LCS - Plan Definition</a></td><td><a href="{{site.data.fhir.path}}plandefinition.html">PlanDefinition</a></td><td>Event-Condition-Action rule that implements behavior for USPSTF's Lung Cancer Screening Guideline Recommendation</td></tr>
+       <tr><td><a href="Library-uofu-r4-lungcancerscreening.html">LCS Recommendation Library</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides logic for lung cancer screening.</td></tr>
+     </tbody>
+  </table>
+
+  <p></p>
+
+  <a name="commonlibraries"> </a>
+  <p>The LCS Recommendation implementation depends on the following common libraries.
+  <table class="list">
+      <thead>
+        <tr><th>Resource</th><th>Type</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><a href="Library-fhirhelpers.html">FHIR Helpers</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides common logic for modeling FHIR R4.</td></tr>
+        <tr><td><a href="Library-matglobalcommonfunctions-fhir4.html">Global Common Functions</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides common global logic.</td></tr>
+      </tbody>
+  </table>

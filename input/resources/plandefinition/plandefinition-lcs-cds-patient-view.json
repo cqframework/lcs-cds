@@ -1,7 +1,8 @@
 {
   "resourceType": "PlanDefinition",
   "id": "lcs-cds-patient-view",
-  "version": "1.0.0",
+  "url": "http://utah.edu/fhir/lcs-cds/lcs-cds-patient-view",
+  "version": "0.1.0",
   "name": "PlanDefinition_Recommendation_Patient_View",
   "title": "Plan Definition -- Lung Cancer Screening",
   "type": {

@@ -1,15 +1,17 @@
 {
   "resourceType": "ValueSet",
-  "id": "procedure-chest-CT",
-  "url": "http://utah.edu/epic/proc_code",
-  "version": "1.0.0",
+  "id": "chest-ct-proc-code",
+  "url": "http://utah.edu/fhir/lcs-cds/ValueSet/chest_ct_proc_code",
+  "version": "0.1.0",
+  "name": "chest_ct_proc_code",
   "title": "Chest CT",
   "status": "active",
-  "description" : "This value set indicates possible Utah-specific Chest CT procedures.",
+  "publisher": "University of Utah",
+  "description": "This value set indicates possible Utah-specific Chest CT procedures. These codes are specific and local to the University of Utah procedure codesystem.",
   "compose": {
     "include": [
       {
-        "system": "http://utah.edu/epic",
+        "system": "http://utah.edu/fhir/lcs-cds/CodeSystem/proc_code",
         "concept": [
           {
             "code": "MI147",
