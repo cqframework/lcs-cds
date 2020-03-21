@@ -1,6 +1,6 @@
 {
   "resourceType": "Patient",
-  "id": "example-patient-2",
+  "id": "Heavy-Smoker",
   "meta": {
     "versionId": "1",
     "lastUpdated": "2020-03-04T20:00:36.179-07:00"

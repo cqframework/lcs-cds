@@ -89,6 +89,15 @@ define "Is current smoker":
       and FHIRHelpers.ToConcept(O.value as CodeableConcept) in "Current Smoker"
   )
 
+define "Is current smoker RETRIEVE (NEW)":
+  [Observation: "Tobacco Smoking Status"]
+
+define "get condition RETRIEVE (NEW)":
+  [Condition: "Lung Cancer"]
+
+define "get procedure RETRIEVE (NEW)":
+  [Procedure: "Chest CT"]
+
 /* REVIEW:
 1. Same issue with singleton from coding
 2. Same issue with observation and the retrieve

@@ -1,6 +1,6 @@
 {
   "resourceType": "Procedure",
-  "id": "example-procedure-2",
+  "id": "procedure-Heavy-Smoker-1",
   "meta": {
     "versionId": "1",
     "lastUpdated": "2020-03-06T10:55:17.762-07:00"
@@ -9,14 +9,14 @@
   "code": {
     "coding": [
       {
-        "system": "http://utah.edu/epic",
+        "system": "http://utah.edu/fhir/lcs-cds/CodeSystem/proc_code",
         "code": "PBG0297",
         "display": "LOW DOSE CT SCAN (LDCT) FOR LUNG CANCER SCREENING"
       }
     ]
   },
   "subject": {
-    "reference": "Patient/example-patient-2"
+    "reference": "Patient/Heavy-Smoker"
   },
   "performedDateTime": "2020-01-28"
 }

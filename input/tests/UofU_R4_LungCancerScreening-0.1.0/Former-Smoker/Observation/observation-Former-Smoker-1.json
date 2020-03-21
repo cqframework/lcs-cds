@@ -1,11 +1,11 @@
 {
   "resourceType": "Observation",
-  "id": "example-observation-2",
+  "id": "observation-Former-Smoker-1",
   "meta": {
-    "versionId": "4",
-    "lastUpdated": "2020-03-06T10:59:45.153-07:00"
+    "versionId": "3",
+    "lastUpdated": "2020-03-06T11:00:44.465-07:00"
   },
-  "status": "preliminary",
+  "status": "final",
   "code": {
     "coding": [
       {
@@ -16,18 +16,18 @@
     ]
   },
   "subject": {
-    "reference": "Patient/example-patient-2"
+    "reference": "Patient/Former-Smoker"
   },
   "effectivePeriod": {
-    "start": "1977-08-18",
-    "end": "2020-03-06"
+    "start": "1960-02-11",
+    "end": "2013-02-02"
   },
   "valueCodeableConcept": {
     "coding": [
       {
         "system": "http://snomed.info/sct",
-        "code": "428071000124103",
-        "display": "Current Heavy tobacco smoker"
+        "code": "8517006",
+        "display": "Former smoker"
       }
     ]
   },
@@ -43,7 +43,7 @@
         ]
       },
       "valueQuantity": {
-        "value": 3,
+        "value": 1.2,
         "unit": "Packs/day"
       }
     }

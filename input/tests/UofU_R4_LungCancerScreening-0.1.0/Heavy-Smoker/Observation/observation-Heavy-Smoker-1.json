@@ -1,6 +1,6 @@
 {
   "resourceType": "Observation",
-  "id": "example-observation-2",
+  "id": "observation-Heavy-Smoker-1",
   "meta": {
     "versionId": "4",
     "lastUpdated": "2020-03-06T10:59:45.153-07:00"
@@ -16,7 +16,7 @@
     ]
   },
   "subject": {
-    "reference": "Patient/example-patient-2"
+    "reference": "Patient/Heavy-Smoker"
   },
   "effectivePeriod": {
     "start": "1977-08-18",
