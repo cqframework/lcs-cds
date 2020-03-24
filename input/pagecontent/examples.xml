@@ -1,0 +1,11 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas-r5/fhir-single.xsd">
+
+<p>The following are examples for the USPSTF's Lung Cancer Screening Implementation Guide:</p>
+
+    <div style="text-indent:25px;">
+        {% include list-simple-patients.xhtml %}
+        {% include list-simple-observations.xhtml %}
+        {% include list-simple-conditions.xhtml %}
+        {% include list-simple-procedures.xhtml %}
+    </div>
+</div>
