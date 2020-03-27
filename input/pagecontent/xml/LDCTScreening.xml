@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GuidelineDocument
+	xmlns="http://gem.yale.edu"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://gem.yale.edu gemschemaiii_v3.1.xsd">
+	<Identity id="1" source="nd">
+		<GuidelineTitle id="1" source="explicit">Final Recommendation Statement
+Lung Cancer: Screening</GuidelineTitle>
+		<Citation id="1" source="nd">
+			<GuidelineLength id="1" source="nd"/>
+		</Citation>
+		<GEMCutHistory id="1" source="nd">
+			<GEMCutVersion id="1" source="nd">
+				<GEMCutAuthor id="1" source="nd"/>
+				<GEMCutDate id="1" source="nd"/>
+			</GEMCutVersion>
+		</GEMCutHistory>
+		<ReleaseDate id="1" source="nd"/>
+		<Availability id="1" source="nd">
+			<Electronic id="1" source="nd"/>
+			<Print id="1" source="nd"/>
+			<Contact id="1" source="nd"/>
+		</Availability>
+		<Status id="1" source="nd"/>
+		<CompanionDocument id="1" source="nd">
+			<PatientResource id="1" source="nd"/>
+			<QuickReferenceGuide id="1" source="nd"/>
+			<TechnicalReport id="1" source="nd"/>
+		</CompanionDocument>
+		<Adaptation id="1" source="nd"/>
+		<StructuredAbstract id="1" source="nd"/>
+	</Identity>
+	<Developer id="1" source="nd">
+		<DeveloperName id="2" source="explicit">U.S. Preventive Services Task Force</DeveloperName>
+		<CommitteeName id="1" source="nd">
+			<CommitteeExpertise id="1" source="nd"/>
+			<CommitteeMember id="1" source="nd">
+				<MemberExpertise id="1" source="nd"/>
+				<MemberConflict id="1" source="nd"/>
+				<MemberRole id="1" source="nd"/>
+			</CommitteeMember>
+		</CommitteeName>
+		<Funding id="1" source="nd"/>
+		<Endorser id="1" source="nd"/>
+		<ComparableGuideline id="1" source="nd"/>
+		<RoleOfSponsor id="1" source="nd"/>
+		<ConflictOfInterest id="1" source="nd">
+			<COIPolicy id="1" source="nd"/>
+			<COIDisclosure id="1" source="nd"/>
+		</ConflictOfInterest>
+	</Developer>
+	<Purpose id="1" source="nd">
+		<MainFocus id="1" source="nd"/>
+		<Rationale id="1" source="nd"/>
+		<Objective id="1" source="nd"/>
+		<AvailableOption id="1" source="nd"/>
+		<HealthOutcome id="1" source="nd"/>
+		<Exception id="1" source="nd"/>
+	</Purpose>
+	<IntendedAudience id="1" source="nd">
+		<Users id="1" source="nd"/>
+		<CareSetting id="1" source="nd"/>
+	</IntendedAudience>
+	<MethodOfDevelopment id="1" source="nd">
+		<DescriptionEvidenceCollection id="1" source="nd">
+			<EvidenceTimePeriod id="1" source="nd"/>
+			<NumberSourceDocuments id="1" source="nd"/>
+			<EvidenceSelectionCriteria id="1" source="nd"/>
+		</DescriptionEvidenceCollection>
+		<DescriptionEvidenceCombination id="1" source="nd"/>
+		<CostAnalysis id="1" source="nd"/>
+		<SpecificationHarmBenefit id="1" source="nd"/>
+		<QuantificationHarmBenefit id="1" source="nd"/>
+		<RoleValueJudgment id="1" source="nd"/>
+		<RolePatientPreference id="1" source="nd"/>
+		<QualifyingStatement id="1" source="nd"/>
+		<MethodsToReachJudgment id="1" source="nd"/>
+		<RatingScheme id="1" source="nd">
+			<EvidenceQualityRatingScheme id="1" source="nd"/>
+			<RecommendationStrengthRatingScheme id="1" source="nd"/>
+		</RatingScheme>
+		<PatientAndPublicInvolvement id="1" source="nd"/>
+	</MethodOfDevelopment>
+	<TargetPopulation id="1" source="nd">
+		<Eligibility id="1" source="nd">
+			<InclusionCriterion id="2" source="explicit">in adults aged 55 to 80 years who have a 30 pack-year smoking history and currently smoke or have quit within the past 15 years.
+				<InclusionCriterionCode id="2" source="nd"/>
+			</InclusionCriterion>
+			<ExclusionCriterion id="1" source="explicit">Screening should be discontinued once a person has not smoked for 15 years or develops a health problem that substantially limits life expectancy or the ability or willingness to have curative lung surgery. 
+				<ExclusionCriterionCode id="1" source="nd"/>
+			</ExclusionCriterion>
+		</Eligibility>
+	</TargetPopulation>
+	<KnowledgeComponents id="1" source="nd">
+		<Recommendation id="1" source="explicit">annual screening for lung cancer with low-dose computed tomography (LDCT)
+			<StatementOfFact id="1" source="nd"/>
+			<Conditional id="1" source="nd">
+				<DecisionVariable id="1" source="nd">
+					<Value id="1" source="nd"/>
+					<DecisionVariableCode id="1" source="nd"/>
+					<DecisionVariableDescription id="1" source="nd">
+						<IntentionalVagueness id="1" source="nd"/>
+					</DecisionVariableDescription>
+					<TestParameter id="1" source="nd">
+						<Sensitivity id="1" source="nd"/>
+						<Specificity id="1" source="nd"/>
+						<PredictiveValue id="1" source="nd"/>
+					</TestParameter>
+					<DecisionVariableCost id="1" source="nd"/>
+				</DecisionVariable>
+				<Action id="1" source="nd">
+					<ActionBenefit id="1" source="nd"/>
+					<ActionRiskHarm id="1" source="nd"/>
+					<ActionBenefitHarmAssessment id="1" source="nd"/>
+					<ActionReason id="1" source="nd"/>
+					<ActionEvidenceQuality id="1" source="nd">
+						<EvidenceQualityDescription id="1" source="nd"/>
+						<Disagreement id="1" source="nd"/>
+					</ActionEvidenceQuality>
+					<ActionRecommendationStrength id="1" source="nd">
+						<RecommendationStrengthCode id="1" source="nd"/>
+					</ActionRecommendationStrength>
+					<ActionDescription id="1" source="nd">
+						<IntentionalVagueness id="1" source="nd"/>
+					</ActionDescription>
+					<ActionCost id="1" source="nd"/>
+					<ActionValue id="1" source="nd"/>
+					<ActionCode id="1" source="nd"/>
+					<ActionType id="1" source="nd"/>
+					<ActionActor id="1" source="nd"/>
+					<ActionVerb id="1" source="nd"/>
+					<ActionDeonticTerm id="1" source="nd"/>
+					<ActionVerbComplement id="1" source="nd"/>
+				</Action>
+				<Reason id="1" source="nd"/>
+				<EvidenceQuality id="1" source="nd">
+					<EvidenceQualityDescription id="1" source="nd"/>
+					<Disagreement id="1" source="nd"/>
+				</EvidenceQuality>
+				<RecommendationStrength id="1" source="nd">
+					<RecommendationStrengthCode id="1" source="nd"/>
+				</RecommendationStrength>
+				<Benefit id="1" source="nd"/>
+				<RiskHarm id="1" source="nd"/>
+				<BenefitHarmAssessment id="1" source="nd"/>
+				<Flexibility id="1" source="nd"/>
+				<Logic id="1" source="nd"/>
+				<Cost id="1" source="nd"/>
+				<Linkage id="1" source="nd"/>
+				<Reference id="1" source="nd"/>
+				<Certainty id="1" source="nd"/>
+				<Goal id="1" source="nd"/>
+			</Conditional>
+			<Imperative id="1" source="nd">
+				<Scope id="1" source="nd">
+					<ScopeCode id="1" source="nd"/>
+				</Scope>
+				<Directive id="1" source="nd">
+					<DirectiveBenefit id="1" source="nd"/>
+					<DirectiveRiskHarm id="1" source="nd"/>
+					<DirectiveBenefitHarmAssessment id="1" source="nd"/>
+					<DirectiveReason id="1" source="nd"/>
+					<DirectiveEvidenceQuality id="1" source="nd">
+						<EvidenceQualityDescription id="1" source="nd"/>
+						<Disagreement id="1" source="nd"/>
+					</DirectiveEvidenceQuality>
+					<DirectiveRecommendationStrength id="1" source="nd">
+						<RecommendationStrengthCode id="1" source="nd"/>
+					</DirectiveRecommendationStrength>
+					<DirectiveDescription id="1" source="nd">
+						<IntentionalVagueness id="1" source="nd"/>
+					</DirectiveDescription>
+					<DirectiveCost id="1" source="nd"/>
+					<DirectiveValue id="1" source="nd"/>
+					<DirectiveCode id="1" source="nd"/>
+					<DirectiveType id="1" source="nd"/>
+					<DirectiveActor id="1" source="nd"/>
+					<DirectiveVerb id="1" source="nd"/>
+					<DirectiveDeonticTerm id="1" source="nd"/>
+					<DirectiveVerbComplement id="1" source="nd"/>
+				</Directive>
+				<Reason id="1" source="nd"/>
+				<EvidenceQuality id="1" source="nd">
+					<EvidenceQualityDescription id="1" source="nd"/>
+					<Disagreement id="1" source="nd"/>
+				</EvidenceQuality>
+				<RecommendationStrength id="1" source="nd">
+					<RecommendationStrengthCode id="1" source="nd"/>
+				</RecommendationStrength>
+				<Benefit id="1" source="nd"/>
+				<RiskHarm id="1" source="nd"/>
+				<BenefitHarmAssessment id="1" source="nd"/>
+				<Flexibility id="1" source="nd"/>
+				<Logic id="1" source="nd"/>
+				<Cost id="1" source="nd"/>
+				<Linkage id="1" source="nd"/>
+				<Reference id="1" source="nd"/>
+				<Certainty id="1" source="nd"/>
+				<Goal id="1" source="nd"/>
+			</Imperative>
+			<RecommendationNotes id="1" source="nd"/>
+		</Recommendation>
+		<Definition id="1" source="nd">
+			<Term id="1" source="nd">
+				<TermMeaning id="1" source="nd"/>
+			</Term>
+		</Definition>
+		<Algorithm id="1" source="nd">
+			<ActionStep id="1" source="nd"/>
+			<ConditionalStep id="1" source="nd"/>
+			<BranchStep id="1" source="nd"/>
+			<SynchronizationStep id="1" source="nd"/>
+		</Algorithm>
+		<ResearchAgenda id="1" source="nd"/>
+		<BackgroundInformation id="1" source="nd"/>
+	</KnowledgeComponents>
+	<Testing id="1" source="nd">
+		<ExternalReview id="1" source="nd"/>
+		<PilotTesting id="1" source="nd"/>
+		<FormalAppraisal id="1" source="nd"/>
+	</Testing>
+	<RevisionPlan id="1" source="nd">
+		<Expiration id="1" source="nd"/>
+		<ScheduledReview id="1" source="nd"/>
+	</RevisionPlan>
+	<ImplementationPlan id="1" source="nd">
+		<ImplementationStrategy id="1" source="nd"/>
+		<AnticipatedBarrier id="1" source="nd"/>
+		<AnticipatedEnabler id="1" source="nd"/>
+		<PerformanceMeasure id="1" source="nd"/>
+	</ImplementationPlan>
+</GuidelineDocument>

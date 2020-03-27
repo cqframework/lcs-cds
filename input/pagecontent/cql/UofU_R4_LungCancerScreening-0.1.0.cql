@@ -28,13 +28,13 @@ define "Inclusion Criteria":
   and not "Has lung cancer"
   and not "Had chest CT in past year"
 
-  define "Is Eligible Detail":
-    if "Inclusion Criteria"
-      then 'Potential eligible patient: ' + First(Patient.name).text +
-        ': Born ' + ToString(Patient.birthDate) +
-        ' (Age: ' + ToString(AgeInYears()) +
-        '), Gender: ' + Patient.gender
-    else null
+define "Is Eligible Detail":
+  if "Inclusion Criteria"
+    then 'Potential eligible patient: ' + First(Patient.name).text +
+      ': Born ' + ToString(Patient.birthDate) +
+      ' (Age: ' + ToString(AgeInYears()) +
+      '), Gender: ' + Patient.gender
+  else null
 
 define "Is Eligible Summary":
   if "Inclusion Criteria"
@@ -75,32 +75,32 @@ define "55 through 80":
 
 /* QUESTION: Do we want to consider a limit for how far back to look for smoking status observations?
 */
-
 define "Current smoker observation":
   Last([Observation: "Tobacco Smoking Status"] O
     where O.status in { 'final', 'amended' }
-    and (
-          FHIRHelpers.ToConcept(O.value as CodeableConcept) in "Current Smoker"
-          or FHIRHelpers.ToConcept(O.value as CodeableConcept) ~ "Former Smoker"
-        )
-       sort by (FHIRHelpers.ToDateTime(issued))
-    )
+      and O.value in "Current Smoker"
+    sort by (FHIRHelpers.ToDateTime(issued))
+  )
+
+define "Former smoker observation":
+  Last([Observation: "Tobacco Smoking Status"] O
+    where O.status in { 'final', 'amended' }
+      and O.value ~ "Former Smoker"
+    sort by (FHIRHelpers.ToDateTime(issued))
+  )
 
 define "Is current smoker":
-    ("Current smoker observation" O
-      where FHIRHelpers.ToConcept(O.value as CodeableConcept) in "Current Smoker"
-    ) is not null
+  "Current smoker observation" is not null
 
 define "Is former smoker who quit within past 15 years":
-  ("Current smoker observation" O
-    where FHIRHelpers.ToConcept(O.value as CodeableConcept) ~ "Former Smoker"
-    and O.effective ends 15 years or less before Today()
+  ("Former smoker observation" O
+      where O.effective ends 15 years or less before Today()
   ) is not null
 
 define "Pack-years":
   "Current smoker observation" O
-    let PacksPerDay: FHIRHelpers.ToQuantity(singleton from (O.component C where FHIRHelpers.ToConcept(C.code) ~ "PACKS A DAY").value),
-    DurationInDays: duration in days between O.effective.start and O.effective.end
+    let PacksPerDay: singleton from (O.component C where C.code ~ "PACKS A DAY").value,
+    DurationInDays: duration in days of O.effective
     return PacksPerDay * (DurationInDays / 365)
 
 define "Has 30 pack-year smoking history":
@@ -109,7 +109,7 @@ define "Has 30 pack-year smoking history":
 define "Has lung cancer":
   exists (
     [Condition: "Lung Cancer"] C
-      where FHIRHelpers.ToConcept(C.clinicalStatus as CodeableConcept) in "Condition Clinical Status"
+      where C.clinicalStatus in "Condition Clinical Status"
   )
 
 define "Had chest CT in past year":
