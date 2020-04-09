@@ -21,13 +21,17 @@ code "PACKS A DAY": '8663-7' from "LOINC" display 'packs per day'
 
 context Patient
 
+define "Test Tobacco Smoking Status": [Observation: "Tobacco Smoking Status"]
+define "Test Tobacco Smoking Status Direct": [Observation] O where O.code ~ "Tobacco Smoking Status"
+
 //define "Test Tobacco Smoking Status": "Tobacco Smoking Status"
 //define "Test Observation": [Observation]
 //define "Test Observation.single()": singleton from ([Observation])
 //define "Test Observation.code": singleton from ([Observation]).code
 //define "Test Observation.code.first()": First([Observation])
 //define "Test Observation.code.first().ToConcept()": FHIRHelpers.ToConcept(First([Observation]).code)
-define "Test Observation.code equivalent": singleton from ([Observation]).code ~ "Tobacco Smoking Status"
+//define "Test Observation.code equivalent": singleton from ([Observation]).code ~ "Tobacco Smoking Status"
+//define "Test Observation.code explicit equivalent": FHIRHelpers.ToConcept(singleton from ([Observation]).code) ~ "Tobacco Smoking Status"
 //define "Test Observation": [Observation] O where O.code ~ "Tobacco Smoking Status"
 
 /*
@@ -82,12 +86,8 @@ define "Exclusion Indicator":
 
 define "55 through 80":
   AgeInYears() >= 55 and AgeInYears() <= 80
-*/
 
-/*
-QUESTION: Do we want to consider a limit for how far back to look for smoking status observations?
-*/
-/*
+// QUESTION: Do we want to consider a limit for how far back to look for smoking status observations?
 define "Current smoker observation":
   Last([Observation: "Tobacco Smoking Status"] O
     where O.status in { 'final', 'amended' }
