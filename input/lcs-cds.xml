@@ -42,6 +42,11 @@
         <title value="LCS Recommendation" />
         <generation value="html" />
       </page>
+      <page>
+        <nameUrl value="ldctscreening.html"/>
+        <title value="GEM Guideline Document"/>
+        <generation value="markdown"/>
+      </page>
     </page>
     <!-- copyright year is a mandatory parameter -->
     <parameter>

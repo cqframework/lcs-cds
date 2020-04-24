@@ -11,7 +11,7 @@
   "compose": {
     "include": [
       {
-        "system": "http://utah.edu/fhir/lcs-cds/CodeSystem/proc_code",
+        "system": "http://utah.edu/epic/proc_code",
         "concept": [
           {
             "code": "MI147",

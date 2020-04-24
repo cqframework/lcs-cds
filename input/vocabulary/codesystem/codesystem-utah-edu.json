@@ -1,7 +1,7 @@
 {
   "resourceType": "CodeSystem",
   "id": "proc-code",
-  "url": "http://utah.edu/fhir/lcs-cds/CodeSystem/proc_code",
+  "url": "http://utah.edu/epic/proc_code",
   "version": "0.1.0",
   "name": "proc_code",
   "title": "CodeSystem - Utah Chest CT Procedures",

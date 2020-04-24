@@ -6,7 +6,7 @@ include FHIRHelpers version '4.0.0' called FHIRHelpers
 include MATGlobalCommonFunctions_FHIR4 version '4.0.000' called Global
 
 codesystem "SNOMED": 'http://snomed.info/sct'
-codesystem "UTAH_EDU": 'http://utah.edu/fhir/lcs-cds/CodeSystem/proc_code'
+codesystem "UTAH_EDU": 'http://utah.edu/epic/proc_code'
 codesystem "LOINC": 'http://loinc.org'
 
 valueset "Lung Cancer":  'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1116.89'
@@ -73,9 +73,7 @@ define "Exclusion Indicator":
 define "55 through 80":
   AgeInYears() >= 55 and AgeInYears() <= 80
 
-/*
-QUESTION: Do we want to consider a limit for how far back to look for smoking status observations?
-*/
+// Return the most recent smoking status observation for use in calculations
 define "Current smoker observation":
   Last([Observation: "Tobacco Smoking Status"] O
     where O.status in { 'final', 'amended' }
