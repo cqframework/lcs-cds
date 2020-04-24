@@ -6,9 +6,11 @@ include FHIRHelpers version '4.0.0' called FHIRHelpers
 
 codesystem "LOINC": 'http://loinc.org'
 
+valueset "Current Smoker": 'http://utah.edu/fhir/lcs-cds/ValueSet/currentsmoker'
+
 code "Tobacco Smoking Status": '72166-2' from "LOINC"
 
 context Patient
 
-define "Test Retrieve": [Observation: "Tobacco Smoking Status"]
-define "Test Where": [Observation] O where O.code ~ "Tobacco Smoking Status"
+define "Test Observation": [Observation: "Tobacco Smoking Status"]
+define "Test Observation in Value Set": "Test Observation" O where O.value in "Current Smoker"
