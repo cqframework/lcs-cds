@@ -1,0 +1,48 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas-r5/fhir-single.xsd">
+  <ul id="markdown-toc">
+     <li><a href="#rec" id="markdown-toc-rec">Final Recommendation Statement</a></li>
+     <li><a href="#funcdesc" id="markdown-toc-funcdesc">Functional Description</a></li>
+     <li><a href="#dataelements" id="markdown-toc-dataelements">Data Elements</a></li>
+     <li><a href="#content" id="markdown-toc-content">Content</a></li>
+     <li><a href="#tests" id="markdown-toc-tests">Tests</a></li>
+  </ul>
+
+  <a name="rec"> </a>
+  <h3>Final Recommendation Statement</h3>
+  <p><a href="https://www.uspreventiveservicestaskforce.org/Page/Document/RecommendationStatementFinal/lung-cancer-screening" target="_blank">USPSTF's recommendation on Lung Cancer Screening</a></p>
+  <p>
+    <strong>The USPSTF recommends annual screening for lung cancer with low-dose computed tomography (LDCT) in adults aged 55 to 80 years who have a 30 pack-year smoking history and currently smoke or have quit within the past 15 years. Screening should be discontinued once a person has not smoked for 15 years or develops a health problem that substantially limits life expectancy or the ability or willingness to have curative lung surgery.<a href="#note1">1</a></strong>
+  </p>
+
+  <p><a href="ldctscreening.html">GEM Guideline Document</a></p>
+
+  <a name="funcdesc"> </a>
+  <h3>Functional Description</h3>
+
+    {% include lcs-recommendation-functional-description.html %}
+
+  <br/>
+
+  <a name="dataelements"> </a>
+  <h3>Data Elements</h3>
+
+    {% include lcs-recommendation-dataelements.xml %}
+
+  <br/>
+
+  <a name="content"> </a>
+  <h3>Content</h3>
+
+  <p>The following artifacts formalize the description of the logic and behavior defined by this recommendation.</p>
+
+    {% include lcs-recommendation-content.xml %}
+
+  <a name="tests"> </a>
+  <h3>Tests</h3>
+
+  <p>The following test cases establish basic functionality for the logic and behavior of this recommendation.</p>
+
+    {%include lcs-recommendation-tests.xml %}
+
+  <br/>
+</div>

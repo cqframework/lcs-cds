@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas-r5/fhir-single.xsd">
-  <id value="lcs-cds" />
-  <url value="http://hl7.org/fhir/cqf/lcs-cds/ImplementationGuide/lcs-cds" />
+  <id value="fhir.lcs.lcs-cds" />
+  <url value="http://utah.edu/fhir/lcs-cds/ImplementationGuide/fhir.lcs.lcs-cds" />
   <version value="0.1.0" />
   <name value="LCS_CDS" />
   <title value="USPSTF Lung Cancer Screening Implementation Guide" />
   <status value="draft" />
   <experimental value="false" />
   <publisher value="U.S. Preventive Services Task Force" />
-  <description value="Final Recommendation Statement
-Lung Cancer: Screening" />
+  <description value="Final Recommendation Statement Lung Cancer: Screening" />
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm" />
@@ -28,15 +27,25 @@ Lung Cancer: Screening" />
         <title value="Home" />
         <generation value="markdown" />
       </page>
-      <!-- <page>
+      <page>
+        <nameUrl value="terminology.html" />
+        <title value="Terminology" />
+        <generation value="html" />
+      </page>
+      <page>
         <nameUrl value="examples.html" />
         <title value="Examples" />
-        <generation value="markdown" />
-      </page> -->
+        <generation value="html" />
+      </page>
       <page>
         <nameUrl value="lcs-recommendation.html" />
         <title value="LCS Recommendation" />
         <generation value="html" />
+      </page>
+      <page>
+        <nameUrl value="ldctscreening.html"/>
+        <title value="GEM Guideline Document"/>
+        <generation value="markdown"/>
       </page>
     </page>
     <!-- copyright year is a mandatory parameter -->

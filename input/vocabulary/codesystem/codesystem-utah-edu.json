@@ -1,13 +1,15 @@
 {
   "resourceType": "CodeSystem",
-  "id": "codesystem-utah-edu",
-  "status": "draft",
-  "name": " http://utah.edu/epic",
+  "id": "proc-code",
+  "url": "http://utah.edu/epic/proc_code",
+  "version": "0.1.0",
+  "name": "proc_code",
   "title": "CodeSystem - Utah Chest CT Procedures",
-  "description": "Chest CT Procedure codes.",
-  "publisher": "U.S. Preventive Services Task Force",
+  "status": "draft",
+  "description": "This is a partial code system list for Chest CT Procedure codes to support publication of this content.",
+  "publisher": "University of Utah",
   "date": "2020-03-10",
-  "valueset": "ValueSet/http://utah.edu/epic/proc_code",
+  "valueset": "http://utah.edu/fhir/lcs-cds/ValueSet/chest_ct_proc_code",
   "content": "example",
 "concept": [
     {

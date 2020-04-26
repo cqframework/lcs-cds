@@ -1,111 +1,40 @@
 {
   "resourceType": "ValueSet",
-  "id": "procedure-chest-CT",
-  "url": "http://utah.edu/epic/proc_code",
-  "version": "1.0.0",
+  "id": "chest-ct-proc-code",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/valueset-sourceReference",
+      "valueUri": "https://www.acr.org/Clinical-Resources/Lung-Cancer-Screening-Resources/FAQ"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/valueset-sourceReference",
+      "valueUri": "https://www.rad.msu.edu/Patient/documents/MSU_CT_CPT_Codes.pdf"
+    }
+  ],
+  "url": "http://utah.edu/fhir/lcs-cds/ValueSet/chest_ct_proc_code",
+  "version": "0.1.0",
+  "name": "chest_ct_proc_code",
   "title": "Chest CT",
   "status": "active",
-  "description" : "This value set indicates possible Utah-specific Chest CT procedures.",
+  "publisher": "University of Utah",
+  "description": "This value set includes CPT codes used to identify Low-dose Cest CT scans used for Lung Cancer screening at University of Utah",
+  "copyright": "This value set includes content from Current Procedures Terminology (CPT) code set and requires a separate license from the American Medical Association. Users of this content are responsible for identifying and obtaining any necessary licenses or authorizations to utilize the codes, according to the licensing policies described at https://ww.ama-assn.org/practice-management/cpt-licensing",
   "compose": {
     "include": [
       {
-        "system": "http://utah.edu/epic",
+        "system": "http://www.ama-assn.org/go/cpt",
         "concept": [
           {
-            "code": "MI147",
-            "display": "CT CHEST FOR LUNG CANCER SCREENING"
-          },
-          {
-            "code": "IMG10031",
-            "display": "CT CHEST LUNG CANCER SCREENING"
-          },
-          {
-            "code": "71250LS",
-            "display": "CT LUNG CANCER SCREENING"
-          },
-          {
-            "code": "4000592",
-            "display": "HB LOW DOSE CT LUNG SCREENING"
-          },
-          {
-            "code": "PBG0297",
-            "display": "LOW DOSE CT SCAN (LDCT) FOR LUNG CANCER SCREENING"
-          },
-          {
             "code": "G0297",
-            "display": "LOW DOSE CT SCAN (LDCT) FOR LUNG CANCER SCREENING"
+            "display": "Low-dose CT scan (LDCT) for lung cancer screening"
           },
           {
-            "code": "S8032",
-            "display": "LOW-DOSE COMPUTED TOMOGRAPHY LUNG CANCER SCRNG"
+            "code": "71250",
+            "display": "Chest CT without contrast"
           },
           {
-            "code": "PBS8032",
-            "display": "LOW-DOSE COMPUTED TOMOGRAPHY LUNG CANCER SCRNG"
-          },
-          {
-            "code": "71250R",
-            "display": "CHEST CT SCAN"
-          },
-          {
-            "code": "71260F",
-            "display": "CHEST CT SCAN W/CONTRAST"
-          },
-          {
-            "code": "71260I",
-            "display": "CHEST CT SCAN W/CONTRAST"
-          },
-          {
-            "code": "71260D",
-            "display": "CHEST CT SCAN W/CONTRAST"
-          },
-          {
-            "code": "71260G",
-            "display": "CHEST CT SCAN W/CONTRAST"
-          },
-          {
-            "code": "71250U",
-            "display": "CHEST CT W/O CONTRAST HIGH RES"
-          },
-          {
-            "code": "71270G",
-            "display": "CHEST CT W/O THEN W/CONTRAST"
-          },
-          {
-            "code": "71270E",
-            "display": "CHEST CT W/O THEN W/CONTRAST"
-          },
-          {
-            "code": "IMG10032",
-            "display": "CT CHEST W IV CONT"
-          },
-          {
-            "code": "IMG10034",
-            "display": "CT CHEST WO IV CONT"
-          },
-          {
-            "code": "IMG10035",
-            "display": "CT CHEST WO IV CONT HIGH RES"
-          },
-          {
-            "code": "IMG10036",
-            "display": "CT CHEST WWO IV CONT"
-          },
-          {
-            "code": "4000418",
-            "display": "HB PET W CT, CHEST, HEAD/NECK"
-          },
-          {
-            "code": "IMG20116",
-            "display": "OS CT CHEST NO RPT"
-          },
-          {
-            "code": "IMG21106",
-            "display": "OS CT CHEST RPT"
-          },
-          {
-            "code": "76140AO",
-            "display": "OUTSIDE FILM CT CHEST"
+            "code": "71270",
+            "display": "Check CT with and without contrast"
           }
         ]
       }

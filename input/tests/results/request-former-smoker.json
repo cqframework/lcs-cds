@@ -139,13 +139,13 @@
 		  },
 		  "status": "completed",
 		  "code": {
-		    "coding": [
-		      {
-		        "system": "http://utah.edu/epic",
-		        "code": "71250R",
-		        "display": "CHEST CT SCAN"
-		      }
-		    ]
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "71250",
+            "display": "Chest CT without contrast"
+          }
+        ]
 		  },
 		  "subject": {
 		    "reference": "Patient/example-patient-3"
