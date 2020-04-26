@@ -63,7 +63,7 @@
           "start": "1960-02-11",
           "end": "2013-02-02"
         },
-        "issued": "2014-04-02T00:00:00Z",
+        "issued": "2014-04-02T00:00:00-07:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -122,7 +122,7 @@
           "start": "1960-02-11",
           "end": "2013-02-02"
         },
-        "issued": "1988-01-05T01:00:00Z",
+        "issued": "1988-01-05T01:00:00-07:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -197,9 +197,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://utah.edu/fhir/lcs-cds/CodeSystem/proc_code",
-              "code": "71250R",
-              "display": "CHEST CT SCAN"
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "71250",
+              "display": "Chest CT without contrast"
             }
           ]
         },

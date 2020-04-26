@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas-r5/fhir-single.xsd">
-  <id value="lcs-cds" />
-  <url value="http://utah.edu/fhir/lcs-cds" />
+  <id value="fhir.lcs.lcs-cds" />
+  <url value="http://utah.edu/fhir/lcs-cds/ImplementationGuide/fhir.lcs.lcs-cds" />
   <version value="0.1.0" />
   <name value="LCS_CDS" />
   <title value="USPSTF Lung Cancer Screening Implementation Guide" />

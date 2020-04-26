@@ -19,6 +19,6 @@
       </thead>
       <tbody>
         <tr><td><a href="Library-library-FHIRHelpers-4.0.0.html">FHIR Helpers</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides common logic for modeling FHIR R4.</td></tr>
-        <tr><td><a href="Library-library-MATGlobalCommonFunctions-FHIR4-4.0.000.html">Global Common Functions</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides common global logic.</td></tr>
+        <tr><td><a href="Library-library-FHIRCommon-4.0.0.html">FHIR Common Functions</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides common global logic.</td></tr>
       </tbody>
   </table>

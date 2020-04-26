@@ -9,9 +9,9 @@
   "code": {
     "coding": [
       {
-        "system": "http://utah.edu/fhir/lcs-cds/CodeSystem/proc_code",
-        "code": "PBG0297",
-        "display": "LOW DOSE CT SCAN (LDCT) FOR LUNG CANCER SCREENING"
+        "system": "http://www.ama-assn.org/go/cpt",
+        "code": "71250",
+        "display": "Chest CT without contrast"
       }
     ]
   },

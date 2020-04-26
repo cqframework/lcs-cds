@@ -62,7 +62,7 @@
           "start": "1977-08-18",
           "end": "2020-03-06"
         },
-        "issued": "2018-03-02T00:00:00Z",
+        "issued": "2018-03-02T00:00:00-07:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -137,9 +137,9 @@
         "code": {
           "coding": [
             {
-              "system": "http://utah.edu/fhir/lcs-cds/CodeSystem/proc_code",
-              "code": "PBG0297",
-              "display": "LOW DOSE CT SCAN (LDCT) FOR LUNG CANCER SCREENING"
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "71250",
+              "display": "Chest CT without contrast"
             }
           ]
         },

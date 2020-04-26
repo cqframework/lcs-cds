@@ -3,7 +3,7 @@ library LungCancerScreening version '0.1.0'
 using FHIR version '4.0.0'
 
 include FHIRHelpers version '4.0.0' called FHIRHelpers
-include MATGlobalCommonFunctions_FHIR4 version '4.0.000' called Global
+include FHIRCommon version '4.0.0' called FHIRCommon
 
 codesystem "SNOMED": 'http://snomed.info/sct'
 codesystem "UTAH_EDU": 'http://utah.edu/epic/proc_code'
@@ -65,10 +65,10 @@ define "Is former smoker who quit within past 15 years":
   ) is not null
 
 define "Pack-years":
-  "Current smoker observation" O
+  "Most recent smoking status observation" O
     let PacksPerDay: singleton from (O.component C where C.code ~ "PACKS A DAY").value,
     DurationInDays: duration in days of O.effective
-    return PacksPerDay * (DurationInDays / 365)
+    return System.Quantity { value: Round((PacksPerDay * (DurationInDays / 365.25)).value), unit: '{Pack-years}' }
 
 define "Has 30 pack-year smoking history":
   "Pack-years" >= 30
@@ -78,11 +78,10 @@ define "Has lung cancer":
 
 define "Had chest CT in past year":
   exists ("Chest CT procedure" P
-      where Global."Normalize Interval"(P.performed) ends 1 year or less before Today()
+    where FHIRCommon.NormalizeInterval(P.performed) ends 1 year or less before Today()
   )
 
 /* Inclusion Criteria */
-/*
 define "Inclusion Criteria":
   "55 through 80"
     and ("Is current smoker" or "Is former smoker who quit within past 15 years")
@@ -107,10 +106,8 @@ define "Is Eligible Indicator":
   if "Inclusion Criteria"
     then 'info'
   else null
-*/
 
 /* Exclusion Criteria */
-/*
 define "Exclusion Criteria":
   (
     not ("Is current smoker" or "Is former smoker who quit within past 15 years")
@@ -134,4 +131,3 @@ define "Exclusion Indicator":
   if "Exclusion Criteria"
     then 'info'
   else null
-*/

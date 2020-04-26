@@ -4,10 +4,10 @@
    <tr><th>Data Element</th><th>Description</th><th>Formal Representation</th></tr>
    </thead>
    <tbody>
-     <tr><td><a href="dataelement-patient-age.html">Patient age in years based on date of birth</a></td><td>Patient Age</td><td>TODO</td></tr>
-     <tr><td><a href="dataelement-smoking-status.html">Smoking status observation</a></td><td>Smoking Status</td><td>TODO</td></tr>
-     <tr><td><a href="dataelement-lung-cancer-diagnosis.html">Lung cancer diagnosis</a></td><td>Lung Cancer Diagnosis</td><td>TODO</td></tr>
-     <tr><td><a href="dataelement-chest-ct-procedure.html">Chest CT procedure</a></td><td>Chest CT Procedure</td><td>TODO</td></tr>
+     <tr><td>Patient age in years based on date of birth</td><td>Patient age as calculated using Patient.birthDate</td><td>LungCancerScreening."Patient age in years based on date of birth"</td></tr>
+     <tr><td>Smoking status observation</td><td>Smoking Status as represented using the US Core Smoking Status profile</td><td>LungCancerScreening."Smoking status observation"</td></tr>
+     <tr><td>Lung cancer diagnosis</td><td>Conditions with a clinical status of active, recurrence, or relapse, and a code in the Lung Cancer value set.</td><td>LungCancerScreening."Lung cancer diagnosis"</td></tr>
+     <tr><td>Chest CT procedure</td><td>Procedures with a status of completed and a code in the Chest CT Procedure Codes value set</td><td>LungCancerScreening."Chest CT procedure"</td></tr>
    </tbody>
 </table>
 </p>

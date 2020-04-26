@@ -139,13 +139,13 @@
 		  },
 		  "status": "completed",
 		  "code": {
-		    "coding": [
-		      {
-		        "system": "http://utah.edu/epic",
-		        "code": "PBG0297",
-		        "display": "LOW DOSE CT SCAN (LDCT) FOR LUNG CANCER SCREENING"
-		      }
-		    ]
+        "coding": [
+          {
+            "system": "http://www.ama-assn.org/go/cpt",
+            "code": "71250",
+            "display": "Chest CT without contrast"
+          }
+        ]
 		  },
 		  "subject": {
 		    "reference": "Patient/example-patient-2"
