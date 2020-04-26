@@ -1,0 +1,12 @@
+<p>LCS Recommendation test cases.
+<table class="list">
+   <thead>
+   <tr><th>Test Case</th><th>Description</th><th>Expected Outcome</th></tr>
+   </thead>
+   <tbody>
+     <tr><td><a href="testcase-heavy-smoker.html">Heavy Smoker</a></td><td>Heavy smoker</td><td>False - No screening is recommended because the patient has a dianogsis of lung cancer</td></tr>
+     <tr><td><a href="testcase-former-smoker.html">Former Smoker</a></td><td>Former smoker</td><td>True - Screening is recommended because the patient has a history of smoking and has not had a recent chest CT scan</td></tr>
+     <tr><td><a href="testcase-never-smoker.html">Never Smoker</a></td><td>Never smoker</td><td>False - No screening is recommended because the patient has no history of smoking</td></tr>
+   </tbody>
+</table>
+</p>

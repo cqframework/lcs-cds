@@ -1,0 +1,13 @@
+<p>Recommendation LCS data elements:
+<table class="list">
+   <thead>
+   <tr><th>Data Element</th><th>Description</th><th>Formal Representation</th></tr>
+   </thead>
+   <tbody>
+     <tr><td><a href="dataelement-patient-age.html">Patient age in years based on date of birth</a></td><td>Patient Age</td><td>TODO</td></tr>
+     <tr><td><a href="dataelement-smoking-status.html">Smoking status observation</a></td><td>Smoking Status</td><td>TODO</td></tr>
+     <tr><td><a href="dataelement-lung-cancer-diagnosis.html">Lung cancer diagnosis</a></td><td>Lung Cancer Diagnosis</td><td>TODO</td></tr>
+     <tr><td><a href="dataelement-chest-ct-procedure.html">Chest CT procedure</a></td><td>Chest CT Procedure</td><td>TODO</td></tr>
+   </tbody>
+</table>
+</p>

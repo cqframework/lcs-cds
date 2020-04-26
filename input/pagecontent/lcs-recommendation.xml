@@ -2,7 +2,9 @@
   <ul id="markdown-toc">
      <li><a href="#rec" id="markdown-toc-rec">Final Recommendation Statement</a></li>
      <li><a href="#funcdesc" id="markdown-toc-funcdesc">Functional Description</a></li>
+     <li><a href="#dataelements" id="markdown-toc-dataelements">Data Elements</a></li>
      <li><a href="#content" id="markdown-toc-content">Content</a></li>
+     <li><a href="#tests" id="markdown-toc-tests">Tests</a></li>
   </ul>
 
   <a name="rec"> </a>
@@ -21,6 +23,13 @@
 
   <br/>
 
+  <a name="dataelements"> </a>
+  <h3>Data Elements</h3>
+
+    {% include lcs-recommendation-dataelements.xml %}
+
+  <br/>
+
   <a name="content"> </a>
   <h3>Content</h3>
 
@@ -28,4 +37,12 @@
 
     {% include lcs-recommendation-content.xml %}
 
+  <a name="tests"> </a>
+  <h3>Tests</h3>
+
+  <p>The following test cases establish basic functionality for the logic and behavior of this recommendation.</p>
+
+    {%include lcs-recommendation-tests.xml %}
+
+  <br/>
 </div>

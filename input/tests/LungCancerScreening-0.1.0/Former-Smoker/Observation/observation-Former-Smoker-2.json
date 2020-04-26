@@ -23,7 +23,7 @@
     "start": "1960-02-11",
     "end": "2013-02-02"
   },
-  "issued": "1988-01-05T01:00:00Z",
+  "issued": "1988-01-05T01:00:00-07:00",
   "valueCodeableConcept": {
     "coding": [
       {

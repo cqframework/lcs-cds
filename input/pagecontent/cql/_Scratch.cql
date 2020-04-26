@@ -12,5 +12,10 @@ code "Tobacco Smoking Status": '72166-2' from "LOINC"
 
 context Patient
 
-define "Test Observation": [Observation: "Tobacco Smoking Status"]
-define "Test Observation in Value Set": "Test Observation" O where O.value in "Current Smoker"
+//define "Test Observation": [Observation: "Tobacco Smoking Status"]
+//define "Test Observation in Value Set": "Test Observation" O where (O.value as CodeableConcept) in "Current Smoker"
+
+define "Smoking status observation":
+  [Observation: "Tobacco Smoking Status"] O
+    where O.status in { 'final', 'amended' }
+      and FHIRHelpers.ToDateTime(O.issued) 10 years or less before Today()

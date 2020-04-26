@@ -9,9 +9,9 @@
   "code": {
     "coding": [
       {
-        "system": "http://utah.edu/fhir/lcs-cds/CodeSystem/proc_code",
-        "code": "71250R",
-        "display": "CHEST CT SCAN"
+        "system": "http://www.ama-assn.org/go/cpt",
+        "code": "71250",
+        "display": "Chest CT without contrast"
       }
     ]
   },

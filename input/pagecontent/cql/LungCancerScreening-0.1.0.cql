@@ -21,6 +21,68 @@ code "PACKS A DAY": '8663-7' from "LOINC" display 'packs per day'
 
 context Patient
 
+/* Data Elements */
+define "Patient age in years based on date of birth":
+  AgeInYears()
+
+// When a tobacco smoking status is more than 10 years old, should that be a "warning" surfaced to the clinician in some way?
+define "Smoking status observation":
+  [Observation: "Tobacco Smoking Status"] O
+    where O.status in { 'final', 'amended' }
+      //and FHIRHelpers.ToDateTime(O.issued) 10 years or less before Today()
+
+define "Lung cancer diagnosis":
+  [Condition: "Lung Cancer"] C
+    where C.clinicalStatus in "Condition Clinical Status"
+
+define "Chest CT procedure":
+  [Procedure: "Chest CT"] P
+    where P.status = 'completed'
+
+/* Intermediate Data Elements */
+define "55 through 80":
+  AgeInYears() >= 55 and AgeInYears() <= 80
+
+define "Most recent smoking status observation":
+  Last("Smoking status observation" O
+    sort by (FHIRHelpers.ToDateTime(issued))
+  )
+
+define "Current smoker observation":
+  "Most recent smoking status observation" O
+    where (O.value as CodeableConcept) in "Current Smoker"
+
+define "Former smoker observation":
+  "Most recent smoking status observation" O
+    where (O.value as CodeableConcept) ~ "Former Smoker"
+
+define "Is current smoker":
+  "Current smoker observation" is not null
+
+define "Is former smoker who quit within past 15 years":
+  ("Former smoker observation" O
+    where O.effective ends 15 years or less before Today()
+  ) is not null
+
+define "Pack-years":
+  "Current smoker observation" O
+    let PacksPerDay: singleton from (O.component C where C.code ~ "PACKS A DAY").value,
+    DurationInDays: duration in days of O.effective
+    return PacksPerDay * (DurationInDays / 365)
+
+define "Has 30 pack-year smoking history":
+  "Pack-years" >= 30
+
+define "Has lung cancer":
+  exists ("Lung cancer diagnosis")
+
+define "Had chest CT in past year":
+  exists ("Chest CT procedure" P
+      where Global."Normalize Interval"(P.performed) ends 1 year or less before Today()
+  )
+
+/* Inclusion Criteria */
+/*
 define "Inclusion Criteria":
   "55 through 80"
     and ("Is current smoker" or "Is former smoker who quit within past 15 years")
@@ -45,7 +107,10 @@ define "Is Eligible Indicator":
   if "Inclusion Criteria"
     then 'info'
   else null
+*/
 
+/* Exclusion Criteria */
+/*
 define "Exclusion Criteria":
   (
     not ("Is current smoker" or "Is former smoker who quit within past 15 years")
@@ -69,51 +134,4 @@ define "Exclusion Indicator":
   if "Exclusion Criteria"
     then 'info'
   else null
-
-define "55 through 80":
-  AgeInYears() >= 55 and AgeInYears() <= 80
-
-// Return the most recent smoking status observation for use in calculations
-define "Current smoker observation":
-  Last([Observation: "Tobacco Smoking Status"] O
-    where O.status in { 'final', 'amended' }
-      and O.value in "Current Smoker"
-    sort by (FHIRHelpers.ToDateTime(issued))
-  )
-
-define "Former smoker observation":
-  Last([Observation: "Tobacco Smoking Status"] O
-    where O.status in { 'final', 'amended' }
-      and O.value ~ "Former Smoker"
-    sort by (FHIRHelpers.ToDateTime(issued))
-  )
-
-define "Is current smoker":
-  "Current smoker observation" is not null
-
-define "Is former smoker who quit within past 15 years":
-  ("Former smoker observation" O
-    where O.effective ends 15 years or less before Today()
-  ) is not null
-
-define "Pack-years":
-  "Current smoker observation" O
-    let PacksPerDay: singleton from (O.component C where C.code ~ "PACKS A DAY").value,
-    DurationInDays: duration in days of O.effective
-    return PacksPerDay * (DurationInDays / 365)
-
-define "Has 30 pack-year smoking history":
-  "Pack-years" >= 30
-
-define "Has lung cancer":
-  exists (
-    [Condition: "Lung Cancer"] C
-      where C.clinicalStatus in "Condition Clinical Status"
-  )
-
-define "Had chest CT in past year":
-  exists(
-    [Procedure: "Chest CT"] P
-      where P.status = 'completed'
-      and Global."Normalize Interval"(P.performed) ends 1 year or less before Today()
-  )
+*/

@@ -18,7 +18,7 @@
   "subject": {
     "reference": "Patient/Never-Smoker"
   },
-  "issued": "1963-05-15T00:00:00Z",
+  "issued": "1963-05-15T00:00:00-07:00",
   "valueCodeableConcept": {
     "coding": [
       {
