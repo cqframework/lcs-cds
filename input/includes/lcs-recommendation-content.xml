@@ -5,7 +5,7 @@
      </thead>
      <tbody>
        <tr><td><a href="PlanDefinition-lcs-cds-patient-view.html">Recommendation LCS - Plan Definition</a></td><td><a href="{{site.data.fhir.path}}plandefinition.html">PlanDefinition</a></td><td>Event-Condition-Action rule that implements behavior for USPSTF's Lung Cancer Screening Guideline Recommendation</td></tr>
-       <tr><td><a href="Library-library-LungCancerScreening-0.1.0.html">LCS Recommendation Library</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides logic for lung cancer screening.</td></tr>
+       <tr><td><a href="Library-LungCancerScreening.html">LCS Recommendation Library</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides logic for lung cancer screening.</td></tr>
      </tbody>
   </table>
 
@@ -18,7 +18,7 @@
         <tr><th>Resource</th><th>Type</th><th>Description</th></tr>
       </thead>
       <tbody>
-        <tr><td><a href="Library-library-FHIRHelpers-4.0.0.html">FHIR Helpers</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides common logic for modeling FHIR R4.</td></tr>
-        <tr><td><a href="Library-library-FHIRCommon-4.0.0.html">FHIR Common Functions</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides common global logic.</td></tr>
+        <tr><td><a href="Library-FHIRHelpers.html">FHIR Helpers</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides common logic for modeling FHIR R4.</td></tr>
+        <tr><td><a href="Library-FHIRCommon.html">FHIR Common Functions</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides common global logic.</td></tr>
       </tbody>
   </table>

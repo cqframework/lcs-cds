@@ -1,9 +1,9 @@
-library LungCancerScreening version '0.1.0'
+library LungCancerScreening
 
-using FHIR version '4.0.0'
+using FHIR version '4.0.1'
 
-include FHIRHelpers version '4.0.0' called FHIRHelpers
-include FHIRCommon version '4.0.0' called FHIRCommon
+include FHIRHelpers version '4.0.1' called FHIRHelpers
+include FHIRCommon version '4.0.1' called FC
 
 codesystem "SNOMED": 'http://snomed.info/sct'
 codesystem "UTAH_EDU": 'http://utah.edu/epic/proc_code'
@@ -71,14 +71,14 @@ define "Pack-years":
     return System.Quantity { value: Round((PacksPerDay * (DurationInDays / 365.25)).value), unit: '{Pack-years}' }
 
 define "Has 30 pack-year smoking history":
-  "Pack-years" >= 30
+  "Pack-years" >= 30 '{Pack-years}'
 
 define "Has lung cancer":
   exists ("Lung cancer diagnosis")
 
 define "Had chest CT in past year":
   exists ("Chest CT procedure" P
-    where FHIRCommon.NormalizeInterval(P.performed) ends 1 year or less before Today()
+    where FC.ToInterval(P.performed) ends 1 year or less before Today()
   )
 
 /* Inclusion Criteria */
