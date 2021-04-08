@@ -1,6 +1,6 @@
 {
   "resourceType": "Observation",
-  "id": "observation-Heavy-Smoker-1",
+  "id": "Heavy-Smoker-1",
   "meta": {
     "versionId": "4",
     "lastUpdated": "2020-03-06T10:59:45.153-07:00"
@@ -39,7 +39,7 @@
           {
             "system": "http://loinc.org",
             "code": "8663-7",
-            "display": "Packs/day"
+            "display": "Cigarettes smoked current (pack per day) - Reported"
           }
         ]
       },

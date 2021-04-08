@@ -1,0 +1,10 @@
+{
+    "resourceType": "Parameters",
+    "id": "expansion-parameters",
+    "parameter": [
+        {
+            "name": "system-version",
+            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+        }
+    ]
+}

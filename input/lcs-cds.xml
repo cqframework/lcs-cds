@@ -8,6 +8,12 @@
   <status value="active" />
   <experimental value="false" />
   <publisher value="University of Utah" />
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="https://medicine.utah.edu/dbmi/"/>
+    </telecom>
+  </contact>
   <description value="This implementation guide provides computable artifacts to support implementation of the United States Preventive Services Task Force's (USPSTF) Final Recommendation Statement on Lung Cancer: Screening" />
   <jurisdiction>
     <coding>
@@ -32,6 +38,94 @@
     <version value="1.0.0"/>
   </dependsOn>
   <definition>
+    <resource>
+      <reference>
+        <reference value="Condition/Former-Smoker-1"/>
+      </reference>
+      <name value="Condition/Former-Smoker-1"/>
+      <description value="Inactive lung cancer condition for Former-Smoker"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Condition/Heavy-Smoker-1"/>
+      </reference>
+      <name value="Condition/Heavy-Smoker-1"/>
+      <description value="Active lung cancer condition for Heavy-Smoker"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/Former-Smoker-1"/>
+      </reference>
+      <name value="Observation/Former-Smoker-1"/>
+      <description value="Tobacco smoking status observation for Former-Smoker"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/Former-Smoker-2"/>
+      </reference>
+      <name value="Observation/Former-Smoker-2"/>
+      <description value="Tobacco smoking status observation for Former-Smoker"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/Heavy-Smoker-1"/>
+      </reference>
+      <name value="Observation/Heavy-Smoker-1"/>
+      <description value="Tobacco smoking status observation for Heavy-Smoker"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/Never-Smoker-1"/>
+      </reference>
+      <name value="Observation/Never-Smoker-1"/>
+      <description value="Tobacco smoking status observation for Never-Smoker"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/Former-Smoker"/>
+      </reference>
+      <name value="Patient/Former-Smoker"/>
+      <description value="Example patient representing a former smoker that meets inclusion criteria for a Lung Cancer Screening"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/Heavy-Smoker"/>
+      </reference>
+      <name value="Patient/Heavy-Smoker"/>
+      <description value="Example patient representing a heavy smoker that meets exclusion criteria for Lung Cancer Screening"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/Never-Smoker"/>
+      </reference>
+      <name value="Patient/Never-Smoker"/>
+      <description value="Example patient representing a never smoker that does not meet inclusion criteria for a Lung Cancer Screening"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Procedure/Former-Smoker-1"/>
+      </reference>
+      <name value="Procedure/Former-Smoker-1"/>
+      <description value="A Chest CT procedure for Former-Smoker, performed more than a year ago"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Procedure/Heavy-Smoker-1"/>
+      </reference>
+      <name value="Procedure/Heavy-Smoker-1"/>
+      <description value="A Chest CT procedure for Heavy-Smoker"/>
+      <exampleBoolean value="true"/>
+    </resource>
     <page>
       <nameUrl value="toc.html" />
       <title value="Table of Contents" />
@@ -129,6 +223,22 @@
     <parameter>
       <code value="path-liquid" />
       <value value="templates/liquid" />
+    </parameter>
+    <parameter>
+      <code value="path-suppressed-warnings"/>
+      <value value="input/ignoreWarnings.txt"/>
+    </parameter>
+    <parameter>
+      <code value="path-expansion-params"/>
+      <value value="expansion-parameters.json"/>
+    </parameter>
+    <parameter>
+      <code value="special-url"/>
+      <value value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1116.89"/>
+    </parameter>
+    <parameter>
+      <code value="special-url"/>
+      <value value="http://hl7.org/fhir/us/core/ValueSet/us-core-observation-smokingstatus"/>
     </parameter>
     <!-- Uncomment one or more of these if you want to limit which syntaxes are supported or want to disable the display of mappings
      <parameter>

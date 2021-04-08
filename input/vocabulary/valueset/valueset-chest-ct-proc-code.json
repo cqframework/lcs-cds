@@ -11,10 +11,9 @@
       "valueUri": "https://www.rad.msu.edu/Patient/documents/MSU_CT_CPT_Codes.pdf"
     }
   ],
-  "url": "http://utah.edu/fhir/lcs-cds/ValueSet/chest_ct_proc_code",
-  "version": "0.1.0",
-  "name": "chest_ct_proc_code",
-  "title": "Chest CT",
+  "url": "http://fhir.org/guides/utah-edu/lcs-cds/ValueSet/chest-ct-proc-code",
+  "name": "ChestCTProcCode",
+  "title": "Chest CT Procedure Code",
   "status": "active",
   "publisher": "University of Utah",
   "description": "This value set includes CPT codes used to identify Low-dose Cest CT scans used for Lung Cancer screening at University of Utah",

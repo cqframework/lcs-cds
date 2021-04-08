@@ -1,8 +1,7 @@
 {
   "resourceType" : "ValueSet",
   "id" : "currentsmoker",
-  "url" : "http://utah.edu/fhir/lcs-cds/ValueSet/currentsmoker",
-  "version" : "0.1.0",
+  "url" : "http://fhir.org/guides/utah-edu/lcs-cds/ValueSet/currentsmoker",
   "name": "CurrentSmoker",
   "title" : "Current Smoker Status",
   "status" : "active",

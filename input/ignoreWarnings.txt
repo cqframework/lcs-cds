@@ -1,0 +1,104 @@
+== Suppressed Messages ==
+
+# Expected
+INFORMATION: Patient/Former-Smoker: Patient: Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient
+
+# Expected
+INFORMATION: Patient/Heavy-Smoker: Patient: Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient
+
+# Expected
+INFORMATION: Patient/Never-Smoker: Patient: Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient
+
+# Expected
+INFORMATION: Condition/Former-Smoker-1: Condition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/Condition
+# Code is valid: https://www.icd10data.com/ICD10CM/Codes/C00-D49/C30-C39/C34-/C34.82
+ERROR: Condition/Former-Smoker-1: Condition.code.coding[0]: Code "C34.82" not found; The code "C34.82" is not valid in the system http://hl7.org/fhir/sid/icd-10; The code provided (http://hl7.org/fhir/sid/icd-10#C34.82) is not  valid in the value set All codes known to the system for 'http://hl7.org/fhir/sid/icd-10#C34.82'
+
+# Expected
+INFORMATION: Condition/Heavy-Smoker-1: Condition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/Condition
+# Code is valid: http://www.icd9data.com/2012/Volume1/140-239/160-165/162/162.5.htm
+ERROR: Condition/Heavy-Smoker-1: Condition.code.coding[0]: The code "162.5" is not valid in the system http://hl7.org/fhir/sid/icd-9-cm; The code provided (http://hl7.org/fhir/sid/icd-9-cm#162.5) is not valid in the value set 'All codes known to the system' (from http://tx.fhir.org/r4) for 'http://hl7.org/fhir/sid/icd-9-cm#162.5'
+
+# Expected
+INFORMATION: Observation/Former-Smoker-1: Observation: Validate resource against profile http://hl7.org/fhir/StructureDefinition/Observation
+
+# Expected
+INFORMATION: Observation/Former-Smoker-2: Observation: Validate resource against profile http://hl7.org/fhir/StructureDefinition/Observation
+
+# Expected
+INFORMATION: Observation/Heavy-Smoker-1: Observation: Validate resource against profile http://hl7.org/fhir/StructureDefinition/Observation
+
+# Expected
+INFORMATION: Observation/Never-Smoker-1: Observation: Validate resource against profile http://hl7.org/fhir/StructureDefinition/Observation
+
+# Expected
+INFORMATION: Procedure/Former-Smoker-1: Procedure: Validate resource against profile http://hl7.org/fhir/StructureDefinition/Procedure
+
+# Expected
+INFORMATION: Procedure/Heavy-Smoker-1: Procedure: Validate resource against profile http://hl7.org/fhir/StructureDefinition/Procedure
+
+# Expected
+INFORMATION: ImplementationGuide/utah.edu.fhir.cds.lcs: ImplementationGuide: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
+
+# Expected
+INFORMATION: Library/LungCancerScreening: Library: Validate resource against profile http://hl7.org/fhir/StructureDefinition/Library
+
+# Expected
+INFORMATION: PlanDefinition/lcs-cds-patient-view: PlanDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/PlanDefinition
+
+# Known Issue with language value set
+WARNING: PlanDefinition/lcs-cds-patient-view: PlanDefinition.action[0].condition[0].expression.language: ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator
+WARNING: PlanDefinition/lcs-cds-patient-view: PlanDefinition.action[0].action[0].condition[0].expression.language: ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator
+WARNING: PlanDefinition/lcs-cds-patient-view: PlanDefinition.action[0].action[0].dynamicValue[0].expression.language: ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator
+WARNING: PlanDefinition/lcs-cds-patient-view: PlanDefinition.action[0].action[0].dynamicValue[1].expression.language: ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator
+WARNING: PlanDefinition/lcs-cds-patient-view: PlanDefinition.action[0].action[0].dynamicValue[2].expression.language: ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator
+WARNING: PlanDefinition/lcs-cds-patient-view: PlanDefinition.action[1].condition[0].expression.language: ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator
+WARNING: PlanDefinition/lcs-cds-patient-view: PlanDefinition.action[1].action[0].condition[0].expression.language: ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator
+WARNING: PlanDefinition/lcs-cds-patient-view: PlanDefinition.action[1].action[0].dynamicValue[0].expression.language: ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator
+WARNING: PlanDefinition/lcs-cds-patient-view: PlanDefinition.action[1].action[0].dynamicValue[1].expression.language: ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator
+WARNING: PlanDefinition/lcs-cds-patient-view: PlanDefinition.action[1].action[0].dynamicValue[2].expression.language: ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator
+
+# Expected
+INFORMATION: ValueSet/2.16.840.1.113762.1.4.1116.89: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
+
+# These are all valid in ICD9 and ICD10, this is an expansion from NLM
+WARNING: ValueSet/2.16.840.1.113762.1.4.1116.89: ValueSet.compose[0].include[0].concept[0]: The code 162.2 is not valid in the system http://hl7.org/fhir/sid/icd-9-cm version 2013
+WARNING: ValueSet/2.16.840.1.113762.1.4.1116.89: ValueSet.compose[0].include[0].concept[1]: The code 162.3 is not valid in the system http://hl7.org/fhir/sid/icd-9-cm version 2013
+WARNING: ValueSet/2.16.840.1.113762.1.4.1116.89: ValueSet.compose[0].include[0].concept[2]: The code 162.4 is not valid in the system http://hl7.org/fhir/sid/icd-9-cm version 2013
+WARNING: ValueSet/2.16.840.1.113762.1.4.1116.89: ValueSet.compose[0].include[0].concept[3]: The code 162.5 is not valid in the system http://hl7.org/fhir/sid/icd-9-cm version 2013
+WARNING: ValueSet/2.16.840.1.113762.1.4.1116.89: ValueSet.compose[0].include[0].concept[4]: The code 162.8 is not valid in the system http://hl7.org/fhir/sid/icd-9-cm version 2013
+WARNING: ValueSet/2.16.840.1.113762.1.4.1116.89: ValueSet.compose[0].include[0].concept[5]: The code 162.9 is not valid in the system http://hl7.org/fhir/sid/icd-9-cm version 2013
+WARNING: ValueSet/2.16.840.1.113762.1.4.1116.89: ValueSet.compose[0].include[1].concept[0]: The code C34.00 is not valid in the system http://hl7.org/fhir/sid/icd-10 version 2020
+WARNING: ValueSet/2.16.840.1.113762.1.4.1116.89: ValueSet.compose[0].include[1].concept[1]: The code C34.01 is not valid in the system http://hl7.org/fhir/sid/icd-10 version 2020
+WARNING: ValueSet/2.16.840.1.113762.1.4.1116.89: ValueSet.compose[0].include[1].concept[2]: The code C34.02 is not valid in the system http://hl7.org/fhir/sid/icd-10 version 2020
+WARNING: ValueSet/2.16.840.1.113762.1.4.1116.89: ValueSet.compose[0].include[1].concept[3]: The code C34.10 is not valid in the system http://hl7.org/fhir/sid/icd-10 version 2020
+WARNING: ValueSet/2.16.840.1.113762.1.4.1116.89: ValueSet.compose[0].include[1].concept[4]: The code C34.11 is not valid in the system http://hl7.org/fhir/sid/icd-10 version 2020
+WARNING: ValueSet/2.16.840.1.113762.1.4.1116.89: ValueSet.compose[0].include[1].concept[5]: The code C34.12 is not valid in the system http://hl7.org/fhir/sid/icd-10 version 2020
+WARNING: ValueSet/2.16.840.1.113762.1.4.1116.89: ValueSet.compose[0].include[1].concept[6]: The code C34.2 is not valid in the system http://hl7.org/fhir/sid/icd-10 version 2020
+WARNING: ValueSet/2.16.840.1.113762.1.4.1116.89: ValueSet.compose[0].include[1].concept[7]: The code C34.30 is not valid in the system http://hl7.org/fhir/sid/icd-10 version 2020
+WARNING: ValueSet/2.16.840.1.113762.1.4.1116.89: ValueSet.compose[0].include[1].concept[8]: The code C34.31 is not valid in the system http://hl7.org/fhir/sid/icd-10 version 2020
+WARNING: ValueSet/2.16.840.1.113762.1.4.1116.89: ValueSet.compose[0].include[1].concept[9]: The code C34.32 is not valid in the system http://hl7.org/fhir/sid/icd-10 version 2020
+WARNING: ValueSet/2.16.840.1.113762.1.4.1116.89: ValueSet.compose[0].include[1].concept[10]: The code C34.80 is not valid in the system http://hl7.org/fhir/sid/icd-10 version 2020
+WARNING: ValueSet/2.16.840.1.113762.1.4.1116.89: ValueSet.compose[0].include[1].concept[11]: The code C34.81 is not valid in the system http://hl7.org/fhir/sid/icd-10 version 2020
+WARNING: ValueSet/2.16.840.1.113762.1.4.1116.89: ValueSet.compose[0].include[1].concept[12]: The code C34.82 is not valid in the system http://hl7.org/fhir/sid/icd-10 version 2020
+WARNING: ValueSet/2.16.840.1.113762.1.4.1116.89: ValueSet.compose[0].include[1].concept[13]: The code C34.90 is not valid in the system http://hl7.org/fhir/sid/icd-10 version 2020
+WARNING: ValueSet/2.16.840.1.113762.1.4.1116.89: ValueSet.compose[0].include[1].concept[14]: The code C34.91 is not valid in the system http://hl7.org/fhir/sid/icd-10 version 2020
+WARNING: ValueSet/2.16.840.1.113762.1.4.1116.89: ValueSet.compose[0].include[1].concept[15]: The code C34.92 is not valid in the system http://hl7.org/fhir/sid/icd-10 version 2020
+
+# Expected
+INFORMATION: ValueSet/conditionclinical: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
+INFORMATION: ValueSet/conditionclinical: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/shareablevalueset - listed in meta
+
+# Expected
+INFORMATION: ValueSet/currentsmoker: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
+
+# Expected
+INFORMATION: ValueSet/chest-ct-proc-code: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
+# These are valid codes
+WARNING: ValueSet/chest-ct-proc-code: ValueSet.compose[0].include[0].concept[0]: The code G0297 is not valid in the system http://www.ama-assn.org/go/cpt
+WARNING: ValueSet/chest-ct-proc-code: ValueSet.compose[0].include[0].concept[1]: The code 71250 is not valid in the system http://www.ama-assn.org/go/cpt
+WARNING: ValueSet/chest-ct-proc-code: ValueSet.compose[0].include[0].concept[2]: The code 71270 is not valid in the system http://www.ama-assn.org/go/cpt
+WARNING: ValueSet.where(id = 'chest-ct-proc-code'): Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt
+
+# Expected
+INFORMATION: ValueSet/us-core-observation-smokingstatus: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet

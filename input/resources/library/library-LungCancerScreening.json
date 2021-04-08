@@ -3,14 +3,16 @@
   "id": "LungCancerScreening",
   "version": "0.1.0",
   "name": "LungCancerScreening",
+  "title": "Lung Cancer Screening",
   "status": "active",
   "experimental": true,
   "type": {
     "coding": [ {
-      "system": "http://hl7.org/fhir/codesystem-library-type.html",
+      "system": "http://terminology.hl7.org/CodeSystem/library-type",
       "code": "logic-library"
     } ]
   },
+  "description": "This library provides computable logic in support of implementing the USPSTF's Final Recommendation Statement on Lung Cancer Screening",
   "relatedArtifact": [ {
     "type": "depends-on",
     "display": "FHIR model information",

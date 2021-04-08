@@ -1,25 +1,23 @@
 {
   "resourceType": "PlanDefinition",
   "id": "lcs-cds-patient-view",
-  "url": "http://utah.edu/fhir/lcs-cds/lcs-cds-patient-view",
   "version": "0.1.0",
-  "name": "PlanDefinition_Recommendation_Patient_View",
-  "title": "Plan Definition -- Lung Cancer Screening",
+  "name": "LungCancerScreeningRecommendation",
+  "title": "Lung Cancer Screening Recommendation",
   "type": {
     "coding": [
       {
-        "system": "http://hl7.org/fhir/plan-definition-type",
+        "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
         "code": "eca-rule",
         "display": "ECA Rule"
       }
     ]
   },
   "status": "draft",
-  "publisher": "U.S. Preventive Services Task Force",
   "description": "Adults aged 55 to 80 years (inclusive both ways, i.e., >=55, <= 80) who have a 30 pack-year smoking history and currently smoke or have quit within the past 15 years. Screening should be discontinued once a person has not smoked for 15 years (identical to inclusion criterion above) or develops a health problem that substantially limits life expectancy or the ability or willingness to have curative lung surgery (currently NOT taken into account.)",
   "purpose": "Annual screening for lung cancer with low-dose computed tomography (LDCT)",
   "library": [
-    "Library/library-LungCancerScreening-0.1.0"
+    "http://fhir.org/guides/utah-edu/lcs-cds/Library/LungCancerScreening"
   ],
   "action": [
     {
@@ -34,7 +32,7 @@
           "kind": "applicability",
           "expression": {
             "description": "Determine if the patient is eligible for Lung Cancer Screening",
-            "language": "text/cql.name",
+            "language": "text/cql-identifier",
             "expression": "Inclusion Criteria"
           }
         }
@@ -48,7 +46,7 @@
               "kind": "applicability",
               "expression": {
                 "description": "Determine if the patient is eligibile for Lung Cancer Screening",
-                "language": "text/cql.name",
+                "language": "text/cql-identifier",
                 "expression": "Inclusion Criteria"
               }
             }
@@ -57,21 +55,21 @@
             {
               "path": "action.description",
               "expression": {
-                "language": "text/cql.name",
+                "language": "text/cql-identifier",
                 "expression": "Is Eligible Detail"
               }
             },
             {
               "path": "action.title",
               "expression": {
-                "language": "text/cql.name",
+                "language": "text/cql-identifier",
                 "expression": "Is Eligible Summary"
               }
             },
             {
               "path": "action.extension",
               "expression": {
-                "language": "text/cql.name",
+                "language": "text/cql-identifier",
                 "expression": "Is Eligible Indicator"
               }
             }
@@ -91,7 +89,7 @@
           "kind": "applicability",
           "expression": {
             "description": "Determine if the patient is excluded for Lung Cancer Screening",
-            "language": "text/cql.name",
+            "language": "text/cql-identifier",
             "expression": "Exclusion Criteria"
           }
         }
@@ -105,7 +103,7 @@
               "kind": "applicability",
               "expression": {
                 "description": "Determine if the patient is excluded for Lung Cancer Screening",
-                "language": "text/cql.name",
+                "language": "text/cql-identifier",
                 "expression": "Exclusion Criteria"
               }
             }
@@ -114,21 +112,21 @@
             {
               "path": "action.description",
               "expression": {
-                "language": "text/cql.name",
+                "language": "text/cql-identifier",
                 "expression": "Exclusion Detail"
               }
             },
             {
               "path": "action.title",
               "expression": {
-                "language": "text/cql.name",
+                "language": "text/cql-identifier",
                 "expression": "Exclusion Summary"
               }
             },
             {
               "path": "action.extension",
               "expression": {
-                "language": "text/cql.name",
+                "language": "text/cql-identifier",
                 "expression": "Exclusion Indicator"
               }
             }

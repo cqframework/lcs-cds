@@ -1,6 +1,6 @@
 {
   "resourceType": "Procedure",
-  "id": "procedure-Former-Smoker-1",
+  "id": "Former-Smoker-1",
   "meta": {
     "versionId": "1",
     "lastUpdated": "2020-03-06T11:09:59.987-07:00"
@@ -9,9 +9,9 @@
   "code": {
     "coding": [
       {
-        "system": "http://utah.edu/fhir/lcs-cds/CodeSystem/proc_code",
-        "code": "71250R",
-        "display": "CHEST CT SCAN"
+        "system": "http://www.ama-assn.org/go/cpt",
+        "code": "71250",
+        "display": "Chest CT without contrast"
       }
     ]
   },
