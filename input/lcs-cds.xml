@@ -17,8 +17,8 @@
   <description value="This implementation guide provides computable artifacts to support implementation of the United States Preventive Services Task Force's (USPSTF) Final Recommendation Statement on Lung Cancer: Screening" />
   <jurisdiction>
     <coding>
-      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm" />
-      <code value="001" />
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
     </coding>
   </jurisdiction>
   <packageId value="utah.edu.fhir.cds.lcs" />

@@ -33,9 +33,11 @@ INFORMATION: Observation/Never-Smoker-1: Observation: Validate resource against 
 
 # Expected
 INFORMATION: Procedure/Former-Smoker-1: Procedure: Validate resource against profile http://hl7.org/fhir/StructureDefinition/Procedure
+INFORMATION: Procedure/Former-Smoker-1: Procedure.code.coding[0]: Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
 
 # Expected
 INFORMATION: Procedure/Heavy-Smoker-1: Procedure: Validate resource against profile http://hl7.org/fhir/StructureDefinition/Procedure
+INFORMATION: Procedure/Heavy-Smoker-1: Procedure.code.coding[0]: Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
 
 # Expected
 INFORMATION: ImplementationGuide/utah.edu.fhir.cds.lcs: ImplementationGuide: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
