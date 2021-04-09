@@ -1,11 +1,4 @@
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas-r5/fhir-single.xsd">
-  <ul id="markdown-toc">
-     <li><a href="#rec" id="markdown-toc-rec">Final Recommendation Statement</a></li>
-     <li><a href="#funcdesc" id="markdown-toc-funcdesc">Functional Description</a></li>
-     <li><a href="#dataelements" id="markdown-toc-dataelements">Data Elements</a></li>
-     <li><a href="#content" id="markdown-toc-content">Content</a></li>
-     <li><a href="#tests" id="markdown-toc-tests">Tests</a></li>
-  </ul>
 
   <a name="rec"> </a>
   <h3>Final Recommendation Statement</h3>
