@@ -24,8 +24,8 @@
   <packageId value="utah.edu.fhir.cds.lcs" />
   <fhirVersion value="4.0.1" />
   <dependsOn id="cqf">
-    <uri value="http://fhir.org/guides/cqf/common/ImplementationGuide/cqf.fhir.common"/>
-    <packageId value="cqf.fhir.common"/>
+    <uri value="http://fhir.org/guides/cqf/common/ImplementationGuide/fhir.cqf.common"/>
+    <packageId value="fhir.cqf.common"/>
     <version value="4.0.1"/>
   </dependsOn>
   <dependsOn id="cpg">
