@@ -258,11 +258,13 @@
     }, {
       "path": "status",
       "code": [ {
+        "system": "http://hl7.org/fhir/event-status",
         "code": "completed"
       } ]
     }, {
       "path": "status",
       "code": [ {
+        "system": "http://hl7.org/fhir/event-status",
         "code": "completed"
       } ]
     } ]
@@ -288,11 +290,13 @@
     }, {
       "path": "status",
       "code": [ {
+        "system": "http://hl7.org/fhir/event-status",
         "code": "completed"
       } ]
     }, {
       "path": "status",
       "code": [ {
+        "system": "http://hl7.org/fhir/event-status",
         "code": "completed"
       } ]
     } ]
