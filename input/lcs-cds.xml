@@ -26,11 +26,7 @@
   <dependsOn id="cqf">
     <uri value="http://fhir.org/guides/cqf/common/ImplementationGuide/cqf.fhir.common"/>
     <packageId value="cqf.fhir.common"/>
-    <!--NOTE: Use the dev version here because the CQF IG has not yet been published.
-    Note that this also means that the CQF IG must be built locally in order to be installed in your local FHIR package cache
     <version value="4.0.1"/>
-    -->
-    <version value="dev"/>
   </dependsOn>
   <dependsOn id="cpg">
     <uri value="http://hl7.org/fhir/uv/cpg/ImplementationGuide/hl7.fhir.uv.cpg"/>

@@ -32,7 +32,7 @@
   }, {
     "type": "depends-on",
     "display": "Library FC",
-    "resource": "http://fhir.org/guides/utah-edu/lcs-cds/Library/FHIRCommon|4.0.1"
+    "resource": "http://fhir.org/guides/cqf/common/Library/FHIRCommon|4.0.1"
   }, {
     "type": "depends-on",
     "display": "Code system SNOMED",
@@ -151,11 +151,29 @@
     "max": "1",
     "type": "boolean"
   }, {
+    "name": "Lung cancer diagnosis",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "Condition"
+  }, {
     "name": "Had chest CT in past year",
     "use": "out",
     "min": 0,
     "max": "1",
     "type": "boolean"
+  }, {
+    "name": "Chest CT procedure",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "Procedure"
+  }, {
+    "name": "Patient",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "Patient"
   }, {
     "name": "Inclusion Criteria",
     "use": "out",
@@ -224,6 +242,12 @@
     "codeFilter": [ {
       "path": "code",
       "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1116.89"
+    }, {
+      "path": "clinicalStatus",
+      "valueSet": "http://fhir.org/guides/utah-edu/lcs-cds/ValueSet/conditionclinical"
+    }, {
+      "path": "clinicalStatus",
+      "valueSet": "http://fhir.org/guides/utah-edu/lcs-cds/ValueSet/conditionclinical"
     } ]
   }, {
     "type": "Procedure",
@@ -231,7 +255,50 @@
     "codeFilter": [ {
       "path": "code",
       "valueSet": "http://fhir.org/guides/utah-edu/lcs-cds/ValueSet/chest-ct-proc-code"
+    }, {
+      "path": "status",
+      "code": [ {
+        "code": "completed"
+      } ]
+    }, {
+      "path": "status",
+      "code": [ {
+        "code": "completed"
+      } ]
     } ]
+  }, {
+    "type": "Condition",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1116.89"
+    }, {
+      "path": "clinicalStatus",
+      "valueSet": "http://fhir.org/guides/utah-edu/lcs-cds/ValueSet/conditionclinical"
+    }, {
+      "path": "clinicalStatus",
+      "valueSet": "http://fhir.org/guides/utah-edu/lcs-cds/ValueSet/conditionclinical"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/utah-edu/lcs-cds/ValueSet/chest-ct-proc-code"
+    }, {
+      "path": "status",
+      "code": [ {
+        "code": "completed"
+      } ]
+    }, {
+      "path": "status",
+      "code": [ {
+        "code": "completed"
+      } ]
+    } ]
+  }, {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
   } ],
   "content": [ {
     "contentType": "text/cql",
