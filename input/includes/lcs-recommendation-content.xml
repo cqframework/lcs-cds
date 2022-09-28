@@ -18,7 +18,7 @@
         <tr><th>Resource</th><th>Type</th><th>Description</th></tr>
       </thead>
       <tbody>
-        <tr><td><a href="http://build.fhir.org/ig/cqframework/cqf/#fhir-helpers">FHIR Helpers</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides common logic for modeling FHIR R4.</td></tr>
-        <tr><td><a href="http://build.fhir.org/ig/cqframework/cqf/#fhir-common">FHIR Common Functions</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides common global logic.</td></tr>
+        <tr><td><a href="https://fhir.org/guides/cqf/common/#fhir-helpers">FHIR Helpers</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides common logic for modeling FHIR R4.</td></tr>
+        <tr><td><a href="https://fhir.org/guides/cqf/common/#fhir-common">FHIR Common Functions</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides common global logic.</td></tr>
       </tbody>
   </table>

@@ -15,6 +15,7 @@
   "name": "ChestCTProcCode",
   "title": "Chest CT Procedure Code",
   "status": "active",
+  "experimental": false,
   "publisher": "University of Utah",
   "description": "This value set includes CPT codes used to identify Low-dose Cest CT scans used for Lung Cancer screening at University of Utah",
   "jurisdiction" : [

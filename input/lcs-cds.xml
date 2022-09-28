@@ -38,6 +38,11 @@
     <packageId value="us.nlm.vsac"/>
     <version value="0.7.0"/>
   </dependsOn>
+  <dependsOn id="uscore">
+    <uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core"/>
+    <packageId value="hl7.fhir.us.core"/>
+    <version value="3.1.1"/>
+  </dependsOn>
   <definition>
     <resource>
       <reference>

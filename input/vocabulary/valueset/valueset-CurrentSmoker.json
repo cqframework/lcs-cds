@@ -5,6 +5,7 @@
   "name": "CurrentSmoker",
   "title" : "Current Smoker Status",
   "status" : "active",
+  "experimental": false,
   "date" : "2020-03-04T00:00:00+10:00",
   "description" : "This value set indicates the current smoking status of a patient who is currently a smoker.",
   "jurisdiction" : [

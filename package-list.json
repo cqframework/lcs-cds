@@ -1,5 +1,5 @@
 {
- "package-id" : "utah.edu.fhir.cds.lcs",
+ "package-id" : "fhir.utah-edu.lcs-cds",
  "title" : "USPSTF Lung Cancer Screening Implementation Guide",
  "canonical" : "http://fhir.org/guides/utah-edu/lcs-cds",
  "category": "Quality / CDS",
