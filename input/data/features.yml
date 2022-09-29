@@ -1,0 +1,10 @@
+---
+feedback:
+  - active: true
+    dashboard:
+      label: New Issue
+      url: https://github.com/cqframework/lcs-cds/issues/new
+  - active: true
+    dashboard:
+      label: Issues
+      url: https://github.com/cqframework/lcs-cds/issues
